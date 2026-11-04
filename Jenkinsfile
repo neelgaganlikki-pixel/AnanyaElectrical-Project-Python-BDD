@@ -23,7 +23,7 @@ pipeline {
         )
         string(
             name: 'PYTEST_MARKER',
-            defaultValue: 'regression',
+            defaultValue: 'smoke',
             description: 'Pytest marker expression (smoke, functional, negative, responsive, regression, production_safe)'
         )
     }
@@ -97,17 +97,17 @@ pipeline {
                 echo '========================================'
                 echo 'EXECUTING PLAYWRIGHT AUTOMATION SUITE'
                 echo '========================================'
-                bat '''
+                bat """
                     if not exist reports\\html mkdir reports\\html
                     if not exist reports\\screenshots mkdir reports\\screenshots
 
-                    echo Target Environment: %TARGET_ENVIRONMENT%
-                    echo Browser Engine:     %BROWSER_TYPE%
-                    echo Self-Healing Mode:  %SELF_HEALING_MODE%
-                    echo Pytest Marker:      %PYTEST_MARKER%
+                    echo Target Environment: ${params.TARGET_ENVIRONMENT}
+                    echo Browser Engine:     ${params.BROWSER_TYPE}
+                    echo Self-Healing Mode:  ${params.SELF_HEALING_MODE}
+                    echo Pytest Marker:      ${params.PYTEST_MARKER}
 
-                    "%PYTHON_EXE%" -m pytest tests/ step_definitions/ -m %PYTEST_MARKER% --env %TARGET_ENVIRONMENT% --browser_type %BROWSER_TYPE% --heal-mode %SELF_HEALING_MODE% --html=reports/html/full_regression_report.html --self-contained-html
-                '''
+                    "%PYTHON_EXE%" -m pytest tests/ step_definitions/ -m ${params.PYTEST_MARKER} --env ${params.TARGET_ENVIRONMENT} --browser_type ${params.BROWSER_TYPE} --heal-mode ${params.SELF_HEALING_MODE} --html=reports/html/full_regression_report.html --self-contained-html
+                """
             }
         }
 
@@ -116,9 +116,9 @@ pipeline {
                 echo '========================================'
                 echo 'GENERATING EXECUTIVE AUDIT SUMMARY'
                 echo '========================================'
-                bat '''
-                    "%PYTHON_EXE%" -c "from utils.reporting import ReportingManager; ReportingManager().generate_executive_summary_report({'total': 37, 'passed': 37, 'failed': 0, 'environment': '%TARGET_ENVIRONMENT%', 'browser': '%BROWSER_TYPE%'})"
-                '''
+                bat """
+                    "%PYTHON_EXE%" -c "from utils.reporting import ReportingManager; ReportingManager().generate_executive_summary_report({'total': 37, 'passed': 37, 'failed': 0, 'environment': '${params.TARGET_ENVIRONMENT}', 'browser': '${params.BROWSER_TYPE}'})"
+                """
             }
         }
     }

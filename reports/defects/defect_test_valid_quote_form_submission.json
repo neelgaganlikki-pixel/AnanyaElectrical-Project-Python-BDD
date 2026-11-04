@@ -1,0 +1,22 @@
+{
+  "test_name": "test_valid_quote_form_submission",
+  "environment": "dev",
+  "base_url": "https://ananya-electrical-solutions.neelgaganat97.workers.dev",
+  "exception_type": "Error",
+  "exception_message": "Locator.is_visible: Error: strict mode violation: locator(\"#quote-form div:has-text('Inquiry Logged')\") resolved to 2 elements:\n    1) <div class=\"p-4 rounded-xl bg-emerald-50 text-emerald-900 font-body-sm flex flex-col gap-3 border border-emerald-200\">\u2026</div> aka locator(\".p-4.rounded-xl.bg-emerald-50\")\n    2) <div class=\"flex items-center gap-2\">\u2026</div> aka get_by_text(\"check_circleInquiry Logged (\")\n\nCall log:\n    - checking visibility of locator(\"#quote-form div:has-text('Inquiry Logged')\")\n",
+  "locator": null,
+  "console_errors": [],
+  "network_errors": [],
+  "dom_snippet": "",
+  "screenshot_path": "D:\\Automation Testing\\Ananya Solutions web\\reports\\screenshots\\failure_test_valid_quote_form_submission_20261104_213526_968.png",
+  "timestamp": "2026-11-04T21:35:42.181071",
+  "ai_analysis": {
+    "category": "Locator issue",
+    "root_cause_summary": "Selector resolved to multiple DOM elements violating Playwright strict mode.",
+    "impact_severity": "Major",
+    "suggested_fix": "Refine selector with parent context or use .first / exact accessible name.",
+    "is_application_defect": false,
+    "healing_recommended": true,
+    "engine": "Heuristic Rule-Based AI Engine"
+  }
+}

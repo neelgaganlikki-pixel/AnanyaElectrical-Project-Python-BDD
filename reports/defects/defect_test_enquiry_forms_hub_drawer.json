@@ -1,0 +1,22 @@
+{
+  "test_name": "test_enquiry_forms_hub_drawer",
+  "environment": "dev",
+  "base_url": "https://ananya-electrical-solutions.neelgaganat97.workers.dev",
+  "exception_type": "AssertionError",
+  "exception_message": "Expected at least 10 form cards in catalog, found 0\nassert 0 >= 10",
+  "locator": null,
+  "console_errors": [],
+  "network_errors": [],
+  "dom_snippet": "",
+  "screenshot_path": "D:\\Automation Testing\\Ananya Solutions web\\reports\\screenshots\\failure_test_enquiry_forms_hub_drawer_20261104_213257_931.png",
+  "timestamp": "2026-11-04T21:33:08.820727",
+  "ai_analysis": {
+    "category": "Application defect",
+    "root_cause_summary": "Assertion failed: application behavior differed from expected business specification.",
+    "impact_severity": "Critical",
+    "suggested_fix": "Log defect in Jira with reproduction steps and screenshot.",
+    "is_application_defect": true,
+    "healing_recommended": false,
+    "engine": "Heuristic Rule-Based AI Engine"
+  }
+}

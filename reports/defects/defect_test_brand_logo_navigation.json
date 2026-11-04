@@ -1,0 +1,22 @@
+{
+  "test_name": "test_brand_logo_navigation",
+  "environment": "dev",
+  "base_url": "https://ananya-electrical-solutions.neelgaganat97.workers.dev",
+  "exception_type": "AssertionError",
+  "exception_message": "Expected scroll position near 0, but was 268\nassert 268 < 100",
+  "locator": null,
+  "console_errors": [],
+  "network_errors": [],
+  "dom_snippet": "",
+  "screenshot_path": "D:\\Automation Testing\\Ananya Solutions web\\reports\\screenshots\\failure_test_brand_logo_navigation_20261104_213228_689.png",
+  "timestamp": "2026-11-04T21:32:41.559979",
+  "ai_analysis": {
+    "category": "Application defect",
+    "root_cause_summary": "Assertion failed: application behavior differed from expected business specification.",
+    "impact_severity": "Critical",
+    "suggested_fix": "Log defect in Jira with reproduction steps and screenshot.",
+    "is_application_defect": true,
+    "healing_recommended": false,
+    "engine": "Heuristic Rule-Based AI Engine"
+  }
+}

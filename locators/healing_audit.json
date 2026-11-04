@@ -1,0 +1,586 @@
+{
+  "summary": {
+    "total_failures": 20,
+    "recovered": 5,
+    "unrecovered": 15,
+    "candidates_generated": 39,
+    "approved_changes": 4,
+    "rejected_changes": 15
+  },
+  "events": [
+    {
+      "timestamp": "2026-11-04T21:25:06.874852",
+      "element_key": "test.button_recovery",
+      "page": "fixture",
+      "original_locator": "#legacy-broken-id",
+      "original_error": "Locator.wait_for: Timeout 4000ms exceeded.\nCall log:\n  - waiting for locator(\"#legacy-broken-id\") to be visible\n",
+      "chosen_candidate": null,
+      "candidate_score": 0,
+      "candidates": [
+        {
+          "selector": "#quote-form button:has-text('Submit Engineering Inquiry')",
+          "score": 45,
+          "reason": "Parent context and text composite"
+        },
+        {
+          "selector": "#quote-form #renamed-id-v2",
+          "score": 30,
+          "reason": "Parent and ID composite"
+        },
+        {
+          "selector": "#quote-form [role='button']:has-text('Submit Engineering Inquiry')",
+          "score": 25,
+          "reason": "Accessible role and name match"
+        },
+        {
+          "selector": "#renamed-id-v2",
+          "score": 20,
+          "reason": "Element ID match"
+        },
+        {
+          "selector": "label:has-text('Submit Engineering Inquiry') + input, label:has-text('Submit Engineering Inquiry') + textarea",
+          "score": 20,
+          "reason": "Associated label match"
+        },
+        {
+          "selector": "#quote-form button:has-text('Submit Engineering Inquiry')",
+          "score": 10,
+          "reason": "Visible text match"
+        }
+      ],
+      "validation_result": {
+        "is_valid": false,
+        "reason": "NO_QUALIFIED_CANDIDATES"
+      },
+      "recovery_result": "FAILED",
+      "human_approval_status": "REJECTED"
+    },
+    {
+      "timestamp": "2026-11-04T21:25:09.369231",
+      "element_key": "test.missing_element",
+      "page": "fixture",
+      "original_locator": "#definitely-removed-element",
+      "original_error": "Locator.wait_for: Timeout 1000ms exceeded.\nCall log:\n  - waiting for locator(\"#definitely-removed-element\") to be visible\n",
+      "chosen_candidate": null,
+      "candidate_score": 0,
+      "candidates": [
+        {
+          "selector": "[role='button']:has-text('Non-existent Feature')",
+          "score": 25,
+          "reason": "Accessible role and name match"
+        },
+        {
+          "selector": "label:has-text('Non-existent Feature') + input, label:has-text('Non-existent Feature') + textarea",
+          "score": 20,
+          "reason": "Associated label match"
+        },
+        {
+          "selector": "button:has-text('Non-existent Feature')",
+          "score": 10,
+          "reason": "Visible text match"
+        }
+      ],
+      "validation_result": {
+        "is_valid": false,
+        "reason": "NO_QUALIFIED_CANDIDATES"
+      },
+      "recovery_result": "FAILED",
+      "human_approval_status": "REJECTED"
+    },
+    {
+      "timestamp": "2026-11-04T21:25:10.575857",
+      "element_key": "test.ambiguous_element",
+      "page": "fixture",
+      "original_locator": "#broken-action-btn",
+      "original_error": "Locator.wait_for: Timeout 1000ms exceeded.\nCall log:\n  - waiting for locator(\"#broken-action-btn\") to be visible\n",
+      "chosen_candidate": null,
+      "candidate_score": 0,
+      "candidates": [],
+      "validation_result": {
+        "is_valid": false,
+        "reason": "NO_QUALIFIED_CANDIDATES"
+      },
+      "recovery_result": "FAILED",
+      "human_approval_status": "REJECTED"
+    },
+    {
+      "timestamp": "2026-11-04T21:25:52.980654",
+      "element_key": "test.button_recovery",
+      "page": "fixture",
+      "original_locator": "#legacy-broken-id",
+      "original_error": "Locator.wait_for: Timeout 3000ms exceeded.\nCall log:\n  - waiting for locator(\"#legacy-broken-id\") to be visible\n",
+      "chosen_candidate": null,
+      "candidate_score": 0,
+      "candidates": [
+        {
+          "selector": "#quote-form button:has-text('Submit Engineering Inquiry')",
+          "score": 45,
+          "reason": "Parent context + tag + text match"
+        },
+        {
+          "selector": "#quote-form [role='button']:has-text('Submit Engineering Inquiry')",
+          "score": 35,
+          "reason": "Accessible role and name match"
+        },
+        {
+          "selector": "#quote-form #renamed-id-v2",
+          "score": 30,
+          "reason": "Parent context + ID match"
+        }
+      ],
+      "validation_result": {
+        "is_valid": false,
+        "reason": "NO_QUALIFIED_CANDIDATES"
+      },
+      "recovery_result": "FAILED",
+      "human_approval_status": "REJECTED"
+    },
+    {
+      "timestamp": "2026-11-04T21:25:55.323218",
+      "element_key": "test.missing_element",
+      "page": "fixture",
+      "original_locator": "#definitely-removed-element",
+      "original_error": "Locator.wait_for: Timeout 1000ms exceeded.\nCall log:\n  - waiting for locator(\"#definitely-removed-element\") to be visible\n",
+      "chosen_candidate": null,
+      "candidate_score": 0,
+      "candidates": [
+        {
+          "selector": "button:has-text('Non-existent Feature')",
+          "score": 35,
+          "reason": "Parent context + tag + text match"
+        },
+        {
+          "selector": "[role='button']:has-text('Non-existent Feature')",
+          "score": 25,
+          "reason": "Accessible role and name match"
+        }
+      ],
+      "validation_result": {
+        "is_valid": false,
+        "reason": "NO_QUALIFIED_CANDIDATES"
+      },
+      "recovery_result": "FAILED",
+      "human_approval_status": "REJECTED"
+    },
+    {
+      "timestamp": "2026-11-04T21:25:56.538119",
+      "element_key": "test.ambiguous_element",
+      "page": "fixture",
+      "original_locator": "#broken-action-btn",
+      "original_error": "Locator.wait_for: Timeout 1000ms exceeded.\nCall log:\n  - waiting for locator(\"#broken-action-btn\") to be visible\n",
+      "chosen_candidate": null,
+      "candidate_score": 0,
+      "candidates": [],
+      "validation_result": {
+        "is_valid": false,
+        "reason": "NO_QUALIFIED_CANDIDATES"
+      },
+      "recovery_result": "FAILED",
+      "human_approval_status": "REJECTED"
+    },
+    {
+      "timestamp": "2026-11-04T21:26:49.514562",
+      "element_key": "test.button_recovery",
+      "page": "fixture",
+      "original_locator": "#legacy-broken-id",
+      "original_error": "Locator.wait_for: Timeout 2500ms exceeded.\nCall log:\n  - waiting for locator(\"#legacy-broken-id\") to be visible\n",
+      "chosen_candidate": {
+        "selector": "#quote-form button:has-text('Submit Engineering Inquiry')",
+        "score": 55,
+        "reason": "Parent context + tag + text + role composite"
+      },
+      "candidate_score": 55,
+      "candidates": [
+        {
+          "selector": "#quote-form button:has-text('Submit Engineering Inquiry')",
+          "score": 55,
+          "reason": "Parent context + tag + text + role composite"
+        },
+        {
+          "selector": "#quote-form [role='button']:has-text('Submit Engineering Inquiry')",
+          "score": 35,
+          "reason": "Accessible role and name match"
+        },
+        {
+          "selector": "#quote-form #renamed-id-v2",
+          "score": 30,
+          "reason": "Parent context + ID match"
+        }
+      ],
+      "validation_result": {
+        "is_valid": true,
+        "match_count": 1,
+        "is_visible": true,
+        "is_enabled": true,
+        "tag_match": true,
+        "text_match": true,
+        "reason": "Candidate uniquely and strictly passed all identity validations"
+      },
+      "recovery_result": "SUCCESS",
+      "human_approval_status": "APPROVED"
+    },
+    {
+      "timestamp": "2026-11-04T21:26:50.743144",
+      "element_key": "test.missing_element",
+      "page": "fixture",
+      "original_locator": "#definitely-removed-element",
+      "original_error": "Locator.wait_for: Timeout 1000ms exceeded.\nCall log:\n  - waiting for locator(\"#definitely-removed-element\") to be visible\n",
+      "chosen_candidate": null,
+      "candidate_score": 0,
+      "candidates": [
+        {
+          "selector": "button:has-text('Non-existent Feature')",
+          "score": 45,
+          "reason": "Parent context + tag + text + role composite"
+        },
+        {
+          "selector": "[role='button']:has-text('Non-existent Feature')",
+          "score": 25,
+          "reason": "Accessible role and name match"
+        }
+      ],
+      "validation_result": {
+        "is_valid": false,
+        "reason": "NO_QUALIFIED_CANDIDATES"
+      },
+      "recovery_result": "FAILED",
+      "human_approval_status": "REJECTED"
+    },
+    {
+      "timestamp": "2026-11-04T21:26:51.925074",
+      "element_key": "test.ambiguous_element",
+      "page": "fixture",
+      "original_locator": "#broken-action-btn",
+      "original_error": "Locator.wait_for: Timeout 1000ms exceeded.\nCall log:\n  - waiting for locator(\"#broken-action-btn\") to be visible\n",
+      "chosen_candidate": null,
+      "candidate_score": 0,
+      "candidates": [],
+      "validation_result": {
+        "is_valid": false,
+        "reason": "NO_QUALIFIED_CANDIDATES"
+      },
+      "recovery_result": "FAILED",
+      "human_approval_status": "REJECTED"
+    },
+    {
+      "timestamp": "2026-11-04T21:36:45.498615",
+      "element_key": "test.button_recovery",
+      "page": "fixture",
+      "original_locator": "#legacy-broken-id",
+      "original_error": "Locator.wait_for: Timeout 2500ms exceeded.\nCall log:\n  - waiting for locator(\"#legacy-broken-id\") to be visible\n",
+      "chosen_candidate": {
+        "selector": "#quote-form button:has-text('Submit Engineering Inquiry')",
+        "score": 55,
+        "reason": "Parent context + tag + text + role composite"
+      },
+      "candidate_score": 55,
+      "candidates": [
+        {
+          "selector": "#quote-form button:has-text('Submit Engineering Inquiry')",
+          "score": 55,
+          "reason": "Parent context + tag + text + role composite"
+        },
+        {
+          "selector": "#quote-form [role='button']:has-text('Submit Engineering Inquiry')",
+          "score": 35,
+          "reason": "Accessible role and name match"
+        },
+        {
+          "selector": "#quote-form #renamed-id-v2",
+          "score": 30,
+          "reason": "Parent context + ID match"
+        }
+      ],
+      "validation_result": {
+        "is_valid": true,
+        "match_count": 1,
+        "is_visible": true,
+        "is_enabled": true,
+        "tag_match": true,
+        "text_match": true,
+        "reason": "Candidate uniquely and strictly passed all identity validations"
+      },
+      "recovery_result": "SUCCESS",
+      "human_approval_status": "APPROVED"
+    },
+    {
+      "timestamp": "2026-11-04T21:36:46.680673",
+      "element_key": "test.missing_element",
+      "page": "fixture",
+      "original_locator": "#definitely-removed-element",
+      "original_error": "Locator.wait_for: Timeout 1000ms exceeded.\nCall log:\n  - waiting for locator(\"#definitely-removed-element\") to be visible\n",
+      "chosen_candidate": null,
+      "candidate_score": 0,
+      "candidates": [
+        {
+          "selector": "button:has-text('Non-existent Feature')",
+          "score": 45,
+          "reason": "Parent context + tag + text + role composite"
+        },
+        {
+          "selector": "[role='button']:has-text('Non-existent Feature')",
+          "score": 25,
+          "reason": "Accessible role and name match"
+        }
+      ],
+      "validation_result": {
+        "is_valid": false,
+        "reason": "NO_QUALIFIED_CANDIDATES"
+      },
+      "recovery_result": "FAILED",
+      "human_approval_status": "REJECTED"
+    },
+    {
+      "timestamp": "2026-11-04T21:36:47.853329",
+      "element_key": "test.ambiguous_element",
+      "page": "fixture",
+      "original_locator": "#broken-action-btn",
+      "original_error": "Locator.wait_for: Timeout 1000ms exceeded.\nCall log:\n  - waiting for locator(\"#broken-action-btn\") to be visible\n",
+      "chosen_candidate": null,
+      "candidate_score": 0,
+      "candidates": [],
+      "validation_result": {
+        "is_valid": false,
+        "reason": "NO_QUALIFIED_CANDIDATES"
+      },
+      "recovery_result": "FAILED",
+      "human_approval_status": "REJECTED"
+    },
+    {
+      "timestamp": "2026-11-04T21:54:59.261012",
+      "element_key": "quote_form.submit_button",
+      "page": "home",
+      "original_locator": "#quote-form button[type='submit']",
+      "original_error": "Locator.wait_for: Timeout 2500ms exceeded.\nCall log:\n  - waiting for locator(\"#quote-form button[type='submit']\") to be visible\n    - locator resolved to visible <button type=\"submit\" class=\"h-12 w-full rounded-lg bg-[#0B192C] hover:bg-[#006398] text-white text-[14px] font-bold shadow-lg transition-",
+      "chosen_candidate": {
+        "selector": "#quote-form button:has-text('Submit Engineering Inquiry')",
+        "score": 55,
+        "reason": "Parent context + tag + text + role composite"
+      },
+      "candidate_score": 55,
+      "candidates": [
+        {
+          "selector": "#quote-form button:has-text('Submit Engineering Inquiry')",
+          "score": 55,
+          "reason": "Parent context + tag + text + role composite"
+        },
+        {
+          "selector": "#quote-form [role='button']:has-text('Submit Engineering Inquiry')",
+          "score": 35,
+          "reason": "Accessible role and name match"
+        }
+      ],
+      "validation_result": {
+        "is_valid": true,
+        "match_count": 1,
+        "is_visible": true,
+        "is_enabled": true,
+        "tag_match": true,
+        "text_match": true,
+        "reason": "Candidate uniquely and strictly passed all identity validations"
+      },
+      "recovery_result": "SUCCESS",
+      "human_approval_status": "SUGGESTED"
+    },
+    {
+      "timestamp": "2026-11-04T21:56:57.457658",
+      "element_key": "quote_form.client_phone",
+      "page": "home",
+      "original_locator": "#client-phone",
+      "original_error": "Locator.wait_for: Timeout 2500ms exceeded.\nCall log:\n  - waiting for locator(\"#client-phone\") to be visible\n",
+      "chosen_candidate": null,
+      "candidate_score": 0,
+      "candidates": [
+        {
+          "selector": "#quote-form [role='textbox']:has-text('Contact Phone Number *')",
+          "score": 35,
+          "reason": "Accessible role and name match"
+        },
+        {
+          "selector": "#quote-form input[placeholder='+91 97434 61955']",
+          "score": 35,
+          "reason": "Placeholder + tag match"
+        },
+        {
+          "selector": "#quote-form #client-phone",
+          "score": 30,
+          "reason": "Parent context + ID match"
+        }
+      ],
+      "validation_result": {
+        "is_valid": false,
+        "reason": "NO_QUALIFIED_CANDIDATES"
+      },
+      "recovery_result": "FAILED",
+      "human_approval_status": "REJECTED"
+    },
+    {
+      "timestamp": "2026-11-04T21:58:58.560587",
+      "element_key": "test.button_recovery",
+      "page": "fixture",
+      "original_locator": "#legacy-broken-id",
+      "original_error": "Locator.wait_for: Timeout 2500ms exceeded.\nCall log:\n  - waiting for locator(\"#legacy-broken-id\") to be visible\n",
+      "chosen_candidate": {
+        "selector": "#quote-form button:has-text('Submit Engineering Inquiry')",
+        "score": 55,
+        "reason": "Parent context + tag + text + role composite"
+      },
+      "candidate_score": 55,
+      "candidates": [
+        {
+          "selector": "#quote-form button:has-text('Submit Engineering Inquiry')",
+          "score": 55,
+          "reason": "Parent context + tag + text + role composite"
+        },
+        {
+          "selector": "#quote-form [role='button']:has-text('Submit Engineering Inquiry')",
+          "score": 35,
+          "reason": "Accessible role and name match"
+        },
+        {
+          "selector": "#quote-form #renamed-id-v2",
+          "score": 30,
+          "reason": "Parent context + ID match"
+        }
+      ],
+      "validation_result": {
+        "is_valid": true,
+        "match_count": 1,
+        "is_visible": true,
+        "is_enabled": true,
+        "tag_match": true,
+        "text_match": true,
+        "reason": "Candidate uniquely and strictly passed all identity validations"
+      },
+      "recovery_result": "SUCCESS",
+      "human_approval_status": "APPROVED"
+    },
+    {
+      "timestamp": "2026-11-04T21:58:59.720950",
+      "element_key": "test.missing_element",
+      "page": "fixture",
+      "original_locator": "#definitely-removed-element",
+      "original_error": "Locator.wait_for: Timeout 1000ms exceeded.\nCall log:\n  - waiting for locator(\"#definitely-removed-element\") to be visible\n",
+      "chosen_candidate": null,
+      "candidate_score": 0,
+      "candidates": [
+        {
+          "selector": "button:has-text('Non-existent Feature')",
+          "score": 45,
+          "reason": "Parent context + tag + text + role composite"
+        },
+        {
+          "selector": "[role='button']:has-text('Non-existent Feature')",
+          "score": 25,
+          "reason": "Accessible role and name match"
+        }
+      ],
+      "validation_result": {
+        "is_valid": false,
+        "reason": "NO_QUALIFIED_CANDIDATES"
+      },
+      "recovery_result": "FAILED",
+      "human_approval_status": "REJECTED"
+    },
+    {
+      "timestamp": "2026-11-04T21:59:00.892913",
+      "element_key": "test.ambiguous_element",
+      "page": "fixture",
+      "original_locator": "#broken-action-btn",
+      "original_error": "Locator.wait_for: Timeout 1000ms exceeded.\nCall log:\n  - waiting for locator(\"#broken-action-btn\") to be visible\n",
+      "chosen_candidate": null,
+      "candidate_score": 0,
+      "candidates": [],
+      "validation_result": {
+        "is_valid": false,
+        "reason": "NO_QUALIFIED_CANDIDATES"
+      },
+      "recovery_result": "FAILED",
+      "human_approval_status": "REJECTED"
+    },
+    {
+      "timestamp": "2026-11-04T22:37:36.145394",
+      "element_key": "test.button_recovery",
+      "page": "fixture",
+      "original_locator": "#legacy-broken-id",
+      "original_error": "Locator.wait_for: Timeout 8000ms exceeded.\nCall log:\n  - waiting for locator(\"#legacy-broken-id\") to be visible\n",
+      "chosen_candidate": {
+        "selector": "#quote-form button:has-text('Submit Engineering Inquiry')",
+        "score": 55,
+        "reason": "Parent context + tag + text + role composite"
+      },
+      "candidate_score": 55,
+      "candidates": [
+        {
+          "selector": "#quote-form button:has-text('Submit Engineering Inquiry')",
+          "score": 55,
+          "reason": "Parent context + tag + text + role composite"
+        },
+        {
+          "selector": "#quote-form [role='button']:has-text('Submit Engineering Inquiry')",
+          "score": 35,
+          "reason": "Accessible role and name match"
+        },
+        {
+          "selector": "#quote-form #renamed-id-v2",
+          "score": 30,
+          "reason": "Parent context + ID match"
+        }
+      ],
+      "validation_result": {
+        "is_valid": true,
+        "match_count": 1,
+        "is_visible": true,
+        "is_enabled": true,
+        "tag_match": true,
+        "text_match": true,
+        "reason": "Candidate uniquely and strictly passed all identity validations"
+      },
+      "recovery_result": "SUCCESS",
+      "human_approval_status": "APPROVED"
+    },
+    {
+      "timestamp": "2026-11-04T22:37:37.321642",
+      "element_key": "test.missing_element",
+      "page": "fixture",
+      "original_locator": "#definitely-removed-element",
+      "original_error": "Locator.wait_for: Timeout 1000ms exceeded.\nCall log:\n  - waiting for locator(\"#definitely-removed-element\") to be visible\n",
+      "chosen_candidate": null,
+      "candidate_score": 0,
+      "candidates": [
+        {
+          "selector": "button:has-text('Non-existent Feature')",
+          "score": 45,
+          "reason": "Parent context + tag + text + role composite"
+        },
+        {
+          "selector": "[role='button']:has-text('Non-existent Feature')",
+          "score": 25,
+          "reason": "Accessible role and name match"
+        }
+      ],
+      "validation_result": {
+        "is_valid": false,
+        "reason": "NO_QUALIFIED_CANDIDATES"
+      },
+      "recovery_result": "FAILED",
+      "human_approval_status": "REJECTED"
+    },
+    {
+      "timestamp": "2026-11-04T22:37:38.506596",
+      "element_key": "test.ambiguous_element",
+      "page": "fixture",
+      "original_locator": "#broken-action-btn",
+      "original_error": "Locator.wait_for: Timeout 1000ms exceeded.\nCall log:\n  - waiting for locator(\"#broken-action-btn\") to be visible\n",
+      "chosen_candidate": null,
+      "candidate_score": 0,
+      "candidates": [],
+      "validation_result": {
+        "is_valid": false,
+        "reason": "NO_QUALIFIED_CANDIDATES"
+      },
+      "recovery_result": "FAILED",
+      "human_approval_status": "REJECTED"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "test_name": "test_unchecked_compliance_blocked",
+  "environment": "dev",
+  "base_url": "https://ananya-electrical-solutions.neelgaganat97.workers.dev",
+  "exception_type": "AssertionError",
+  "exception_message": "Expected compliance-check checkbox to require checking\nassert True is False",
+  "locator": null,
+  "console_errors": [],
+  "network_errors": [],
+  "dom_snippet": "",
+  "screenshot_path": "D:\\Automation Testing\\Ananya Solutions web\\reports\\screenshots\\failure_test_unchecked_compliance_blocked_20261104_213431_150.png",
+  "timestamp": "2026-11-04T21:34:49.532684",
+  "ai_analysis": {
+    "category": "Application defect",
+    "root_cause_summary": "Assertion failed: application behavior differed from expected business specification.",
+    "impact_severity": "Critical",
+    "suggested_fix": "Log defect in Jira with reproduction steps and screenshot.",
+    "is_application_defect": true,
+    "healing_recommended": false,
+    "engine": "Heuristic Rule-Based AI Engine"
+  }
+}

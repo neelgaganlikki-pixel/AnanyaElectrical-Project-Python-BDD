@@ -1,0 +1,43 @@
+environments:
+  dev:
+    base_url: "https://ananya-electrical-solutions.neelgaganat97.workers.dev"
+    name: "Development (Cloudflare Workers Edge)"
+    allow_write_operations: true
+
+  production:
+    base_url: "https://ananyaelectricalsolutions.com"
+    name: "Production (Primary Business Domain)"
+    allow_write_operations: false
+
+active_environment: "dev"
+
+browser:
+  type: "chromium"  # chromium, firefox, webkit
+  headless: true
+  slow_mo: 0
+  viewport:
+    width: 1920
+    height: 1080
+  timeout: 30000
+
+self_healing:
+  mode: "ASSISTED"  # STRICT, ASSISTED, AUTO
+  confidence_threshold: 65
+  max_retry_action: 1
+  audit_file: "locators/healing_audit.json"
+  history_file: "locators/healing_history.json"
+  baseline_file: "locators/baseline_locators.json"
+
+ai_analysis:
+  enabled: true
+  provider: "heuristic"  # heuristic, openai, gemini, anthropic
+  api_key_env: "AI_ANALYSIS_API_KEY"
+  log_suggestions: true
+
+reporting:
+  html_report_path: "reports/html/report.html"
+  screenshot_dir: "reports/screenshots"
+  traces_dir: "reports/traces"
+  defects_dir: "reports/defects"
+  self_healing_dir: "reports/self_healing"
+

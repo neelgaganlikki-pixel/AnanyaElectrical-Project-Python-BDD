@@ -1,0 +1,22 @@
+{
+  "test_name": "test_invalid_email_format_rejected",
+  "environment": "dev",
+  "base_url": "https://ananya-electrical-solutions.neelgaganat97.workers.dev",
+  "exception_type": "TimeoutError",
+  "exception_message": "Locator.wait_for: Timeout 2500ms exceeded.\nCall log:\n  - waiting for locator(\"#client-phone\") to be visible\n",
+  "locator": null,
+  "console_errors": [],
+  "network_errors": [],
+  "dom_snippet": "",
+  "screenshot_path": "D:\\Automation Testing\\Ananya Solutions web\\reports\\screenshots\\failure_test_invalid_email_format_rejected_20261104_215658_369.png",
+  "timestamp": "2026-11-04T21:57:13.794857",
+  "ai_analysis": {
+    "category": "Locator issue",
+    "root_cause_summary": "Timeout waiting for locator: None. Element structure may have changed.",
+    "impact_severity": "Major",
+    "suggested_fix": "Verify locator against current DOM or trigger SelfHealingEngine in ASSISTED/AUTO mode.",
+    "is_application_defect": false,
+    "healing_recommended": true,
+    "engine": "Heuristic Rule-Based AI Engine"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "test_name": "test_self_healing_successful_recovery",
+  "environment": "dev",
+  "base_url": "https://ananya-electrical-solutions.neelgaganat97.workers.dev",
+  "exception_type": "TimeoutError",
+  "exception_message": "Locator.wait_for: Timeout 3000ms exceeded.\nCall log:\n  - waiting for locator(\"#legacy-broken-id\") to be visible\n",
+  "locator": null,
+  "console_errors": [],
+  "network_errors": [],
+  "dom_snippet": "",
+  "screenshot_path": "D:\\Automation Testing\\Ananya Solutions web\\reports\\screenshots\\failure_test_self_healing_successful_recovery_20261104_212553_972.png",
+  "timestamp": "2026-11-04T21:25:54.118208",
+  "ai_analysis": {
+    "category": "Locator issue",
+    "root_cause_summary": "Timeout waiting for locator: None. Element structure may have changed.",
+    "impact_severity": "Major",
+    "suggested_fix": "Verify locator against current DOM or trigger SelfHealingEngine in ASSISTED/AUTO mode.",
+    "is_application_defect": false,
+    "healing_recommended": true,
+    "engine": "Heuristic Rule-Based AI Engine"
+  }
+}

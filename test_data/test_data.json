@@ -1,0 +1,71 @@
+{
+  "environments": {
+    "dev": {
+      "base_url": "https://ananya-electrical-solutions.neelgaganat97.workers.dev",
+      "name": "Cloudflare Workers Development"
+    },
+    "production": {
+      "base_url": "https://ananyaelectricalsolutions.com",
+      "name": "Production"
+    }
+  },
+  "contact_info": {
+    "primary_phone": "+91 9632025123",
+    "primary_phone_tel": "tel:+919632025123",
+    "emergency_phone": "+91 8660121438",
+    "emergency_phone_tel": "tel:+918660121438",
+    "official_email": "ananyaelectricalsolutions@gmail.com",
+    "whatsapp_url_prefix": "https://wa.me/919632025123",
+    "registered_address": "59, Opp Bank of India, G-Block, Sahakarnagar Main Road, Bengaluru, Karnataka 560092"
+  },
+  "valid_form_data": {
+    "client_name": "Precision Engineering Works Ltd.",
+    "client_phone": "+91 97434 61955",
+    "project_type": "substation",
+    "location": "Peenya Industrial Area, Bengaluru",
+    "client_email": "projects@precision-eng.in",
+    "notes": "1000 kVA Substation and HT distribution requirement with CEIG drawing sanction.",
+    "compliance_confirmed": true,
+    "preferred_channel": "whatsapp"
+  },
+  "negative_test_data": {
+    "invalid_phones": [
+      "12345",
+      "abcdefghij",
+      "987654321",
+      "01234567890123",
+      "+91 1234567890"
+    ],
+    "invalid_emails": [
+      "plainaddress",
+      "@missingusername.com",
+      "username@.com",
+      "username@domain..com",
+      "username@domain with spaces.com"
+    ],
+    "xss_payloads": [
+      "<script>alert('XSS')</script>",
+      "<img src=x onerror=alert(1)>",
+      "';DROP TABLE leads;--"
+    ],
+    "boundary_phones": {
+      "min_minus_one_9_digits": "987654321",
+      "exact_10_digits": "9876543210",
+      "max_plus_one_11_digits": "98765432109",
+      "with_plus_91_prefix": "+91 9876543210",
+      "with_zero_prefix": "09876543210"
+    }
+  },
+  "responsive_viewports": [
+    {"name": "desktop_fhd", "width": 1920, "height": 1080, "type": "desktop"},
+    {"name": "desktop_hd", "width": 1440, "height": 900, "type": "desktop"},
+    {"name": "desktop_wxga", "width": 1366, "height": 768, "type": "desktop"},
+    {"name": "tablet_landscape", "width": 1024, "height": 768, "type": "tablet"},
+    {"name": "tablet_portrait", "width": 768, "height": 1024, "type": "tablet"},
+    {"name": "mobile_iphone14_max", "width": 430, "height": 932, "type": "mobile"},
+    {"name": "mobile_iphone14", "width": 390, "height": 844, "type": "mobile"},
+    {"name": "mobile_iphone_x", "width": 375, "height": 812, "type": "mobile"},
+    {"name": "mobile_android_standard", "width": 360, "height": 800, "type": "mobile"}
+  ]
+}
+

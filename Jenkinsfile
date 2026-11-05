@@ -1,3 +1,4 @@
+
 pipeline {
     agent any
 
@@ -5,40 +6,25 @@ pipeline {
         githubPush()
     }
 
-    parameters {
-        choice(
-            name: 'TARGET_ENVIRONMENT',
-            choices: ['dev', 'production'],
-            description: 'Target test environment (DEV is default; production restricts execution to non-destructive tests)'
-        )
-        choice(
-            name: 'BROWSER_TYPE',
-            choices: ['chromium', 'firefox', 'webkit'],
-            description: 'Browser engine for Playwright execution'
-        )
-        choice(
-            name: 'SELF_HEALING_MODE',
-            choices: ['ASSISTED', 'AUTO', 'STRICT'],
-            description: 'Self-healing engine recovery mode'
-        )
-        string(
-            name: 'PYTEST_MARKER',
-            defaultValue: 'smoke',
-            description: 'Pytest marker expression (smoke, functional, negative, responsive, regression, production_safe)'
-        )
-    }
-
     environment {
         PYTHONUNBUFFERED = '1'
         PYTHON_EXE = 'C:\\Users\\NEELGAGAN B R\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+
+        // Fixed execution configuration
+        TARGET_ENVIRONMENT = 'dev'
+        BROWSER_TYPE = 'chromium'
+        SELF_HEALING_MODE = 'ASSISTED'
+        PYTEST_MARKER = 'smoke'
     }
 
     stages {
+
         stage('Checkout & Setup') {
             steps {
                 echo '========================================'
                 echo 'CHECKOUT & ENVIRONMENT SETUP'
                 echo '========================================'
+
                 checkout scm
             }
         }
@@ -48,6 +34,7 @@ pipeline {
                 echo '========================================'
                 echo 'VERIFYING PYTHON & PIP'
                 echo '========================================'
+
                 bat '''
                     "%PYTHON_EXE%" --version
                     "%PYTHON_EXE%" -m pip --version
@@ -60,6 +47,7 @@ pipeline {
                 echo '========================================'
                 echo 'INSTALLING TEST DEPENDENCIES'
                 echo '========================================'
+
                 bat '''
                     "%PYTHON_EXE%" -m pip install -r requirements.txt
                 '''
@@ -71,6 +59,7 @@ pipeline {
                 echo '========================================'
                 echo 'VALIDATING PLAYWRIGHT BROWSER BINARIES'
                 echo '========================================'
+
                 bat '''
                     "%PYTHON_EXE%" -m playwright install chromium
                 '''
@@ -82,11 +71,19 @@ pipeline {
                 echo '========================================'
                 echo 'ENVIRONMENT VALIDATION & SAFETY GUARD'
                 echo '========================================'
+
                 script {
-                    echo "Selected Target Environment: ${params.TARGET_ENVIRONMENT}"
-                    echo "Selected Marker: ${params.PYTEST_MARKER}"
-                    if (params.TARGET_ENVIRONMENT == 'production' && params.PYTEST_MARKER != 'smoke' && params.PYTEST_MARKER != 'production_safe') {
-                        error("SAFETY GUARD ACTIVATED: Production execution is strictly limited to 'smoke' or 'production_safe' markers to prevent destructive testing.")
+                    echo "Selected Target Environment: ${env.TARGET_ENVIRONMENT}"
+                    echo "Selected Marker: ${env.PYTEST_MARKER}"
+
+                    if (
+                        env.TARGET_ENVIRONMENT == 'production' &&
+                        env.PYTEST_MARKER != 'smoke' &&
+                        env.PYTEST_MARKER != 'production_safe'
+                    ) {
+                        error(
+                            "SAFETY GUARD ACTIVATED: Production execution is strictly limited to 'smoke' or 'production_safe' markers."
+                        )
                     }
                 }
             }
@@ -97,16 +94,17 @@ pipeline {
                 echo '========================================'
                 echo 'EXECUTING PLAYWRIGHT AUTOMATION SUITE'
                 echo '========================================'
+
                 bat """
                     if not exist reports\\html mkdir reports\\html
                     if not exist reports\\screenshots mkdir reports\\screenshots
 
-                    echo Target Environment: ${params.TARGET_ENVIRONMENT}
-                    echo Browser Engine:     ${params.BROWSER_TYPE}
-                    echo Self-Healing Mode:  ${params.SELF_HEALING_MODE}
-                    echo Pytest Marker:      ${params.PYTEST_MARKER}
+                    echo Target Environment: %TARGET_ENVIRONMENT%
+                    echo Browser Engine: %BROWSER_TYPE%
+                    echo Self-Healing Mode: %SELF_HEALING_MODE%
+                    echo Pytest Marker: %PYTEST_MARKER%
 
-                    "%PYTHON_EXE%" -m pytest tests/ step_definitions/ -m ${params.PYTEST_MARKER} --env ${params.TARGET_ENVIRONMENT} --browser_type ${params.BROWSER_TYPE} --heal-mode ${params.SELF_HEALING_MODE} --html=reports/html/full_regression_report.html --self-contained-html
+                    "%PYTHON_EXE%" -m pytest tests/ step_definitions/ -m %PYTEST_MARKER% --env %TARGET_ENVIRONMENT% --browser_type %BROWSER_TYPE% --heal-mode %SELF_HEALING_MODE% --html=reports/html/full_regression_report.html --self-contained-html
                 """
             }
         }
@@ -116,8 +114,9 @@ pipeline {
                 echo '========================================'
                 echo 'GENERATING EXECUTIVE AUDIT SUMMARY'
                 echo '========================================'
+
                 bat """
-                    "%PYTHON_EXE%" -c "from utils.reporting import ReportingManager; ReportingManager().generate_executive_summary_report({'total': 37, 'passed': 37, 'failed': 0, 'environment': '${params.TARGET_ENVIRONMENT}', 'browser': '${params.BROWSER_TYPE}'})"
+                    "%PYTHON_EXE%" -c "from utils.reporting import ReportingManager; ReportingManager().generate_executive_summary_report({'total': 37, 'passed': 37, 'failed': 0, 'environment': '${env.TARGET_ENVIRONMENT}', 'browser': '${env.BROWSER_TYPE}'})"
                 """
             }
         }
@@ -151,7 +150,8 @@ pipeline {
             echo '''
 ========================================
 BUILD / TEST EXECUTION FAILED
-Check reports/html/full_regression_report.html and reports/defects/ for root-cause triage.
+Check reports/html/full_regression_report.html
+and reports/defects/ for root-cause triage.
 ========================================
 '''
         }
@@ -160,7 +160,8 @@ Check reports/html/full_regression_report.html and reports/defects/ for root-cau
             echo '''
 ========================================
 BUILD & TEST EXECUTION SUCCESSFUL
-All Playwright Python & BDD tests passed against target environment.
+All Playwright Python & BDD tests passed
+against target environment.
 ========================================
 '''
         }

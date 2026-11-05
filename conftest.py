@@ -30,6 +30,22 @@ def pytest_addoption(parser):
         default="ASSISTED",
         help="Self-healing locator mode: STRICT, ASSISTED (default), or AUTO"
     )
+    parser.addoption(
+        "--headed",
+        "--head",
+        dest="headed",
+        action="store_true",
+        default=False,
+        help="Run browser tests in headed mode (visible browser window)"
+    )
+    parser.addoption(
+        "--slowmo",
+        dest="slowmo",
+        action="store",
+        type=int,
+        default=0,
+        help="Slow down Playwright operations by milliseconds (e.g., --slowmo 500)"
+    )
 
 @pytest.fixture(scope="session")
 def env_manager(request) -> EnvironmentManager:
@@ -68,10 +84,14 @@ def playwright_instance():
         pass
 
 @pytest.fixture(scope="session")
-def browser_instance(playwright_instance, browser_type_name):
+def browser_instance(request, playwright_instance, browser_type_name):
     b_type = getattr(playwright_instance, browser_type_name)
+    is_headed = bool(request.config.getoption("headed", False))
+    slow_mo_ms = int(request.config.getoption("slowmo", 0))
+
     launch_args = {
-        "headless": True
+        "headless": not is_headed,
+        "slow_mo": slow_mo_ms
     }
     if browser_type_name == "chromium":
         launch_args["args"] = ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"]

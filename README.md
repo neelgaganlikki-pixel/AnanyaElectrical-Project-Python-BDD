@@ -69,9 +69,9 @@ Ananya_Automation/
 │   └── prompt_templates.py         # AI analysis prompt templates
 ├── test_data/
 │   ├── test_data.json              # Structured test inputs and viewport matrix
-│   ├── testcase.xlsx               # 39-scenario Excel test cases inventory
+│   ├── TestCase.xlsx               # 39-scenario Excel test cases inventory & executive dashboard
 │   └── test_scenarios.xlsx         # Test scenarios workbook
-├── testcase.xlsx                   # Root level copy of 39-scenario Excel test cases inventory
+├── TestCase.xlsx                   # Root level copy of 39-scenario Excel test cases inventory
 ├── locators/
 │   ├── baseline_locators.json      # Discovered element baselines
 │   ├── healing_history.json        # Recovery action logs

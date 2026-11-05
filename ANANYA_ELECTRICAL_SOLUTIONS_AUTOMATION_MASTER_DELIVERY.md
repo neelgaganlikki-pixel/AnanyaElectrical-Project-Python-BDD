@@ -19,7 +19,7 @@
 
 2. **Test Scenario Design & Excel Test Inventory:**
    - Designed 39 real, non-synthetic test scenarios covering Functional, Positive, Negative, Boundary Value Analysis (BVA), Equivalence Partitioning, UI Layout, Responsive Reflow, Cross-Browser Compatibility, Integrations, Security, Performance SLAs, SEO, and WCAG Accessibility.
-   - Exported formatted test inventory with priority, severity, steps, and execution status to [testcase.xlsx](testcase.xlsx) and [test_data/test_scenarios.xlsx](test_data/test_scenarios.xlsx).
+   - Exported formatted test inventory with priority, severity, steps, and execution status to [TestCase.xlsx](TestCase.xlsx) and [test_data/TestCase.xlsx](test_data/TestCase.xlsx).
 
 3. **Enterprise Architecture & Page Object Model:**
    - Implemented clean separation of concerns: `config/`, `core/`, `pages/`, `tests/`, `features/`, `step_definitions/`, `utils/`, `ai/`, `locators/`, and `reports/`.

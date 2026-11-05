@@ -107,7 +107,16 @@ pytest -m smoke --env dev
 pytest -m "functional or negative" --env dev
 ```
 
-### 4. Execute with HTML Report Generation
+### 4. Execute Functional Tests in Headed Mode (Visible Browser)
+```bash
+# Standard headed mode
+pytest -m functional --headed --env dev
+
+# Headed mode with demo slow-motion (e.g. 500ms delay per action)
+pytest -m functional --headed --slowmo 500 --env dev
+```
+
+### 5. Execute with HTML Report Generation
 ```bash
 pytest --env dev --html=reports/html/report.html --self-contained-html
 ```

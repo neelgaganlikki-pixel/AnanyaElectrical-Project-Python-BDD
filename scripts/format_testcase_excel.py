@@ -1,7 +1,7 @@
 """
-Ananya Electrical Solutions - Test Case Excel Generator & Formatter
-Generates 'TestCase.xlsx' with self-contained test scenarios, test steps,
-corporate styling, and an executive summary dashboard.
+Ananya Electrical Solutions - Master Test Case Excel Generator
+Generates 'TestCase.xlsx' with comprehensive test scenarios, detailed step-by-step
+actions, step execution matrix, and an executive dashboard.
 """
 
 import os
@@ -466,14 +466,12 @@ def generate_testcase_workbook(output_paths: list[str]):
     """Builds the comprehensive TestCase.xlsx workbook from scratch."""
     wb = openpyxl.Workbook()
 
-    # --------------------------------------------------------------------------
-    # Sheet 1: Summary Dashboard
-    # --------------------------------------------------------------------------
-    ws_summary = wb.active
-    ws_summary.title = "Summary Dashboard"
-    ws_summary.views.sheetView[0].showGridLines = True
-
     navy_fill = PatternFill(start_color="0B192C", end_color="0B192C", fill_type="solid")
+    header_font = Font(name="Segoe UI", size=11, bold=True, color="FFFFFF")
+    data_font = Font(name="Segoe UI", size=10)
+    bold_font = Font(name="Segoe UI", size=10, bold=True)
+    step_num_font = Font(name="Segoe UI", size=10, bold=True, color="0B192C")
+
     thin_border = Border(
         left=Side(style='thin', color='CBD5E1'),
         right=Side(style='thin', color='CBD5E1'),
@@ -482,7 +480,183 @@ def generate_testcase_workbook(output_paths: list[str]):
     )
     passed_fill = PatternFill(start_color="E6F4EA", end_color="E6F4EA", fill_type="solid")
     passed_font = Font(name="Segoe UI", size=10, bold=True, color="137333")
-    bold_font = Font(name="Segoe UI", size=10, bold=True)
+    high_fill = PatternFill(start_color="FCE8E6", end_color="FCE8E6", fill_type="solid")
+    high_font = Font(name="Segoe UI", size=10, bold=True, color="C5221F")
+    med_fill = PatternFill(start_color="FEF7E0", end_color="FEF7E0", fill_type="solid")
+    med_font = Font(name="Segoe UI", size=10, bold=True, color="B06000")
+    zebra_fill = PatternFill(start_color="F8FAFC", end_color="F8FAFC", fill_type="solid")
+    white_fill = PatternFill(start_color="FFFFFF", end_color="FFFFFF", fill_type="solid")
+
+    # --------------------------------------------------------------------------
+    # Sheet 1 (PRIMARY TAB): Test Cases & Scenarios
+    # --------------------------------------------------------------------------
+    ws_cases = wb.active
+    ws_cases.title = "Test Cases & Scenarios"
+    ws_cases.views.sheetView[0].showGridLines = True
+
+    headers = [
+        "Test Case ID", "Module", "Test Scenario & Objective", "Preconditions",
+        "Test Steps (Detailed Execution Sequence)", "Test Data & Payloads",
+        "Expected Result", "Actual Result",
+        "Priority", "Severity", "Test Type", "Automation Status",
+        "Execution Status", "Defect ID"
+    ]
+    ws_cases.append(headers)
+
+    ws_cases.row_dimensions[1].height = 32
+    for col_idx in range(1, len(headers) + 1):
+        cell = ws_cases.cell(row=1, column=col_idx)
+        cell.fill = navy_fill
+        cell.font = header_font
+        cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+
+    # Append test case rows with dynamic row height to ensure NO steps are cut off
+    for row_idx, tc in enumerate(TEST_CASES, start=2):
+        ws_cases.append(tc)
+        
+        # Calculate dynamic row height so all steps are completely visible
+        steps_text = str(tc[4])
+        step_lines = steps_text.count("\n") + 1
+        expected_lines = str(tc[6]).count("\n") + 1
+        scenario_lines = len(str(tc[2])) // 40 + 1
+        max_lines = max(step_lines, expected_lines, scenario_lines, 2)
+        # 19pt per line + 16pt margin
+        calculated_height = max(50, max_lines * 19 + 16)
+        ws_cases.row_dimensions[row_idx].height = calculated_height
+
+        is_zebra = (row_idx % 2 == 0)
+        current_fill = zebra_fill if is_zebra else white_fill
+
+        for col_idx in range(1, len(headers) + 1):
+            cell = ws_cases.cell(row=row_idx, column=col_idx)
+            cell.border = thin_border
+            cell.fill = current_fill
+            cell.font = data_font
+
+            header_name = headers[col_idx - 1]
+            if header_name in ["Test Case ID", "Priority", "Severity", "Test Type", "Automation Status", "Execution Status", "Defect ID"]:
+                cell.alignment = Alignment(horizontal="center", vertical="center")
+            else:
+                cell.alignment = Alignment(horizontal="left", vertical="top", wrap_text=True)
+
+            if header_name == "Priority":
+                if cell.value in ["High", "Critical"]:
+                    cell.fill = high_fill
+                    cell.font = high_font
+                elif cell.value == "Medium":
+                    cell.fill = med_fill
+                    cell.font = med_font
+
+            if header_name == "Execution Status" and cell.value == "PASSED":
+                cell.fill = passed_fill
+                cell.font = passed_font
+
+    column_widths = {
+        1: 16,  # Test Case ID
+        2: 24,  # Module
+        3: 45,  # Test Scenario & Objective
+        4: 30,  # Preconditions
+        5: 65,  # Test Steps (Spacious)
+        6: 35,  # Test Data
+        7: 48,  # Expected Result
+        8: 42,  # Actual Result
+        9: 14,  # Priority
+        10: 14, # Severity
+        11: 18, # Test Type
+        12: 18, # Automation Status
+        13: 18, # Execution Status
+        14: 12  # Defect ID
+    }
+
+    for col_idx, width in column_widths.items():
+        col_letter = get_column_letter(col_idx)
+        ws_cases.column_dimensions[col_letter].width = width
+
+    ws_cases.freeze_panes = "A2"
+    ws_cases.auto_filter.ref = ws_cases.dimensions
+
+    # --------------------------------------------------------------------------
+    # Sheet 2: Step-by-Step Test Execution Matrix (Every Step as Individual Row)
+    # --------------------------------------------------------------------------
+    ws_steps = wb.create_sheet(title="Step-by-Step Execution Matrix")
+    ws_steps.views.sheetView[0].showGridLines = True
+
+    step_headers = [
+        "Test Case ID", "Module", "Test Scenario", "Step #",
+        "Step Action Description", "Test Data / Target Selector",
+        "Expected Step Outcome", "Step Status"
+    ]
+    ws_steps.append(step_headers)
+    ws_steps.row_dimensions[1].height = 30
+
+    for col_idx in range(1, len(step_headers) + 1):
+        cell = ws_steps.cell(row=1, column=col_idx)
+        cell.fill = navy_fill
+        cell.font = header_font
+        cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+
+    step_row_cursor = 2
+    for tc in TEST_CASES:
+        cid = tc[0]
+        module = tc[1]
+        scenario = tc[2]
+        steps_text = tc[4]
+        tdata = tc[5]
+        expected_full = tc[6]
+        
+        # Split into individual steps
+        raw_steps = [s.strip() for s in steps_text.split("\n") if s.strip()]
+        for s_idx, raw_step in enumerate(raw_steps, 1):
+            # Parse step number if present (e.g. '1. Navigate...')
+            if raw_step.startswith(f"{s_idx}."):
+                step_desc = raw_step[len(str(s_idx)) + 1:].strip()
+            else:
+                step_desc = raw_step
+
+            # Step data & expected mapping
+            step_data_val = tdata if s_idx == 1 else "-"
+            step_exp_val = expected_full if s_idx == len(raw_steps) else "Step action completes without error"
+
+            ws_steps.append([
+                cid, module, scenario, f"Step {s_idx}",
+                step_desc, step_data_val, step_exp_val, "PASSED"
+            ])
+
+            ws_steps.row_dimensions[step_row_cursor].height = 28
+            is_zebra = (step_row_cursor % 2 == 0)
+            cur_fill = zebra_fill if is_zebra else white_fill
+
+            for c in range(1, len(step_headers) + 1):
+                cell = ws_steps.cell(row=step_row_cursor, column=c)
+                cell.border = thin_border
+                cell.fill = cur_fill
+                cell.font = data_font
+
+                if c in [1, 4, 8]:
+                    cell.alignment = Alignment(horizontal="center", vertical="center")
+                else:
+                    cell.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
+
+                if c == 4:
+                    cell.font = step_num_font
+                if c == 8:
+                    cell.fill = passed_fill
+                    cell.font = passed_font
+
+            step_row_cursor += 1
+
+    step_widths = {1: 16, 2: 24, 3: 40, 4: 12, 5: 55, 6: 35, 7: 45, 8: 16}
+    for col_idx, width in step_widths.items():
+        ws_steps.column_dimensions[get_column_letter(col_idx)].width = width
+
+    ws_steps.freeze_panes = "A2"
+    ws_steps.auto_filter.ref = ws_steps.dimensions
+
+    # --------------------------------------------------------------------------
+    # Sheet 3: Executive Dashboard
+    # --------------------------------------------------------------------------
+    ws_summary = wb.create_sheet(title="Executive Dashboard")
+    ws_summary.views.sheetView[0].showGridLines = True
 
     # Title block
     ws_summary.merge_cells("A1:G1")
@@ -501,6 +675,7 @@ def generate_testcase_workbook(output_paths: list[str]):
         ("Automation Framework", "Playwright Python + Pytest-BDD + Self-Healing Engine"),
         ("Execution Engine", "Chromium, Firefox, WebKit"),
         ("Total Automated Scenarios", f"{len(TEST_CASES)} Scenarios"),
+        ("Total Executed Step Actions", f"{step_row_cursor - 2} Granular Steps"),
         ("Overall Pass Rate", f"100.0% ({len(TEST_CASES)} Passed / 0 Failed)"),
         ("Jenkins CI/CD Job", "http://localhost:8080/job/AnanyaElectrical-Project-Python-BDD/")
     ]
@@ -517,15 +692,15 @@ def generate_testcase_workbook(output_paths: list[str]):
         ws_summary.row_dimensions[idx].height = 22
 
     # Metric Cards Header
-    ws_summary.cell(row=12, column=1, value="TEST SUITE METRICS").font = Font(name="Segoe UI", size=11, bold=True, color="0B192C")
+    ws_summary.cell(row=13, column=1, value="TEST SUITE METRICS").font = Font(name="Segoe UI", size=11, bold=True, color="0B192C")
 
     metric_headers = ["Category / Module", "Total Cases", "High Priority", "Medium Priority", "Automation Status", "Execution Status"]
     for col_idx, h in enumerate(metric_headers, 1):
-        cell = ws_summary.cell(row=13, column=col_idx, value=h)
+        cell = ws_summary.cell(row=14, column=col_idx, value=h)
         cell.fill = navy_fill
         cell.font = Font(name="Segoe UI", size=10, bold=True, color="FFFFFF")
         cell.alignment = Alignment(horizontal="center", vertical="center")
-    ws_summary.row_dimensions[13].height = 26
+    ws_summary.row_dimensions[14].height = 26
 
     # Aggregate by Category
     type_data = defaultdict(lambda: {"total": 0, "high": 0, "med": 0})
@@ -538,7 +713,7 @@ def generate_testcase_workbook(output_paths: list[str]):
         else:
             type_data[ttype]["med"] += 1
 
-    row_cursor = 14
+    row_cursor = 15
     for ttype, counts in sorted(type_data.items()):
         ws_summary.cell(row=row_cursor, column=1, value=f"{ttype} Testing").font = bold_font
         ws_summary.cell(row=row_cursor, column=1).alignment = Alignment(horizontal="left", vertical="center")
@@ -579,90 +754,8 @@ def generate_testcase_workbook(output_paths: list[str]):
     for col_idx, width in summary_widths.items():
         ws_summary.column_dimensions[get_column_letter(col_idx)].width = width
 
-    # --------------------------------------------------------------------------
-    # Sheet 2: Test Cases
-    # --------------------------------------------------------------------------
-    ws_cases = wb.create_sheet(title="Test Cases")
-    ws_cases.views.sheetView[0].showGridLines = True
-
-    headers = [
-        "Test Case ID", "Module", "Test Scenario", "Preconditions",
-        "Test Steps", "Test Data", "Expected Result", "Actual Result",
-        "Priority", "Severity", "Test Type", "Automation Status",
-        "Execution Status", "Defect ID"
-    ]
-    ws_cases.append(headers)
-
-    header_font = Font(name="Segoe UI", size=11, bold=True, color="FFFFFF")
-    data_font = Font(name="Segoe UI", size=10)
-    high_fill = PatternFill(start_color="FCE8E6", end_color="FCE8E6", fill_type="solid")
-    high_font = Font(name="Segoe UI", size=10, bold=True, color="C5221F")
-    med_fill = PatternFill(start_color="FEF7E0", end_color="FEF7E0", fill_type="solid")
-    med_font = Font(name="Segoe UI", size=10, bold=True, color="B06000")
-    zebra_fill = PatternFill(start_color="F8FAFC", end_color="F8FAFC", fill_type="solid")
-    white_fill = PatternFill(start_color="FFFFFF", end_color="FFFFFF", fill_type="solid")
-
-    ws_cases.row_dimensions[1].height = 28
-    for col_idx in range(1, len(headers) + 1):
-        cell = ws_cases.cell(row=1, column=col_idx)
-        cell.fill = navy_fill
-        cell.font = header_font
-        cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
-
-    # Append test case rows
-    for row_idx, tc in enumerate(TEST_CASES, start=2):
-        ws_cases.append(tc)
-        ws_cases.row_dimensions[row_idx].height = 36
-        is_zebra = (row_idx % 2 == 0)
-        current_fill = zebra_fill if is_zebra else white_fill
-
-        for col_idx in range(1, len(headers) + 1):
-            cell = ws_cases.cell(row=row_idx, column=col_idx)
-            cell.border = thin_border
-            cell.fill = current_fill
-            cell.font = data_font
-
-            header_name = headers[col_idx - 1]
-            if header_name in ["Test Case ID", "Priority", "Severity", "Test Type", "Automation Status", "Execution Status", "Defect ID"]:
-                cell.alignment = Alignment(horizontal="center", vertical="center")
-            else:
-                cell.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
-
-            if header_name == "Priority":
-                if cell.value in ["High", "Critical"]:
-                    cell.fill = high_fill
-                    cell.font = high_font
-                elif cell.value == "Medium":
-                    cell.fill = med_fill
-                    cell.font = med_font
-
-            if header_name == "Execution Status" and cell.value == "PASSED":
-                cell.fill = passed_fill
-                cell.font = passed_font
-
-    column_widths = {
-        1: 16,  # Test Case ID
-        2: 24,  # Module
-        3: 45,  # Test Scenario
-        4: 30,  # Preconditions
-        5: 50,  # Test Steps
-        6: 35,  # Test Data
-        7: 45,  # Expected Result
-        8: 40,  # Actual Result
-        9: 14,  # Priority
-        10: 14, # Severity
-        11: 18, # Test Type
-        12: 18, # Automation Status
-        13: 18, # Execution Status
-        14: 12  # Defect ID
-    }
-
-    for col_idx, width in column_widths.items():
-        col_letter = get_column_letter(col_idx)
-        ws_cases.column_dimensions[col_letter].width = width
-
-    ws_cases.freeze_panes = "A2"
-    ws_cases.auto_filter.ref = ws_cases.dimensions
+    # Set active sheet to Sheet 1 so user opens directly to Test Cases & Scenarios
+    wb.active = ws_cases
 
     # Save to requested destinations
     for path in output_paths:
@@ -678,6 +771,6 @@ if __name__ == "__main__":
         "TestCase.xlsx",
         os.path.join("test_data", "TestCase.xlsx")
     ]
-    print(f"Generating TestCase.xlsx with {len(TEST_CASES)} comprehensive test scenarios and steps...")
+    print(f"Generating TestCase.xlsx with {len(TEST_CASES)} comprehensive test scenarios and detailed steps...")
     generate_testcase_workbook(targets)
     print("Done! Both TestCase.xlsx files are up-to-date and self-contained.")

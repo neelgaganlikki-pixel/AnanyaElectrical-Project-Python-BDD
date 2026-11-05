@@ -10,4 +10,5 @@ reports/traces/*.zip
 node_modules/
 .vscode/
 .idea/
+~$*
 

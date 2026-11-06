@@ -1,0 +1,409 @@
+{
+  "url": "https://ananyaelectricalsolutions.com/",
+  "timestamp": "2026-11-06 15:20:03",
+  "http_diagnostics": {
+    "status_code": 200,
+    "final_url": "https://ananyaelectricalsolutions.com/",
+    "server": "cloudflare",
+    "content_type": "text/html; charset=utf-8",
+    "content_encoding": "zstd",
+    "cache_control": "no-cache, must-revalidate",
+    "security_headers": {
+      "strict-transport-security": "Not Set",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "SAMEORIGIN",
+      "content-security-policy": "Not Set",
+      "referrer-policy": "strict-origin-when-cross-origin"
+    },
+    "total_requests": 31,
+    "nav_duration_seconds": 7.93
+  },
+  "console": [],
+  "failed_requests": [],
+  "requests_summary": {},
+  "metadata": {
+    "title": "Ananya Electrical Solutions | Electrical & Solar Contractor Karnataka",
+    "title_length": 69,
+    "description": "Government-licensed Super Grade electrical contractor headquartered in Bengaluru, serving major cities and towns across Karnataka. HT/LT substations, industrial wiring, BESCOM & CEIG approvals, and rooftop solar.",
+    "description_length": 212,
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "canonical": "https://ananyaelectricalsolutions.com/",
+    "og_title": "Ananya Electrical Solutions | Electrical & Solar Contractor Karnataka",
+    "og_image": "https://ananyaelectricalsolutions.com/assets/aistudio/Electrical_transmission_lines_on__2K_20261025145912_944acc49.jpg",
+    "og_url": "https://ananyaelectricalsolutions.com/",
+    "twitter_card": "summary_large_image"
+  },
+  "structured_data": [
+    {
+      "index": 0,
+      "type": null,
+      "name": null,
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": [
+              "Electrician",
+              "LocalBusiness",
+              "ProfessionalService"
+            ],
+            "@id": "https://ananyaelectricalsolutions.com/#business",
+            "name": "Ananya Electrical Solutions",
+            "alternateName": "Ananya Electrical Solutions Bengaluru",
+            "description": "Government of Karnataka Licensed Super Grade Electrical Contractor & Turnkey Solar EPC company in Bengaluru. Specializing in 11kV\u2013110kV substations, HT/LT switchgear panels, BESCOM & CEIG approvals, industrial/commercial/residential wiring, earthing, and rooftop solar installations.",
+            "url": "https://ananyaelectricalsolutions.com/",
+            "telephone": "+91-9632025123",
+            "email": "ananyaelectricalsolutions@gmail.com",
+            "priceRange": "\u20b9\u20b9\u20b9",
+            "foundingDate": "2020",
+            "image": "https://ananyaelectricalsolutions.com/assets/aistudio/Electrical_transmission_lines_on__2K_20261025145912_944acc49.jpg",
+            "logo": "https://ananyaelectricalsolutions.com/assets/aistudio/Screenshot_2026-10-24_213203_08863194.png",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "59, Opp Bank of India, G-Block, Sahakarnagar Main Road",
+              "addressLocality": "Bengaluru",
+              "addressRegion": "Karnataka",
+              "postalCode": "560092",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 13.0623,
+              "longitude": 77.5871
+            },
+            "hasMap": "https://www.google.com/maps/search/?api=1&query=59+Opp+Bank+of+India+G-Block+Sahakarnagar+Main+Road+Bengaluru+Karnataka+560092",
+            "contactPoint": [
+              {
+                "@type": "ContactPoint",
+                "telephone": "+91-9632025123",
+                "contactType": "customer service",
+                "email": "ananyaelectricalsolutions@gmail.com",
+                "areaServed": "IN-KA",
+                "availableLanguage": [
+                  "English",
+                  "Kannada",
+                  "Hindi",
+                  "Telugu",
+                  "Tamil"
+                ]
+              },
+              {
+                "@type": "ContactPoint",
+                "telephone": "+91-8660121438",
+                "contactType": "emergency",
+                "areaServed": "IN-KA",
+                "availableLanguage": [
+                  "English",
+                  "Kannada",
+                  "Hindi"
+                ]
+              }
+            ],
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday"
+                ],
+                "opens": "08:30",
+                "closes": "19:30"
+              }
+            ],
+            "areaServed": [
+              {
+                "@type": "City",
+                "name": "Bengaluru"
+              },
+              {
+                "@type": "Place",
+                "name": "Sahakarnagar, Bengaluru"
+              },
+              {
+                "@type": "Place",
+                "name": "Peenya Industrial Area, Bengaluru"
+              },
+              {
+                "@type": "Place",
+                "name": "Yelahanka & Hebbal, Bengaluru"
+              },
+              {
+                "@type": "Place",
+                "name": "Whitefield & Mahadevapura, Bengaluru"
+              },
+              {
+                "@type": "Place",
+                "name": "Electronic City & Bommasandra, Bengaluru"
+              },
+              {
+                "@type": "Place",
+                "name": "Devanahalli & Hosakote Industrial Corridor"
+              },
+              {
+                "@type": "State",
+                "name": "Karnataka"
+              }
+            ],
+            "sameAs": [
+              "https://www.instagram.com/ananyaelectricalsolutions"
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Electrical Contracting & Turnkey Solar EPC Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "HT / LT Electrical Works & Substations (11kV / 33kV / 66kV / 110kV)",
+                    "description": "Turnkey outdoor and indoor substation design, DP/4P yard structures, VCB/RMU switchgear, and high-voltage XLPE cabling in Bengaluru and Karnataka."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Transformer, Switchgear & Control Panel Erection (PCC, MCC, APFC, VCB, ACB)",
+                    "description": "Installation, testing, and commissioning of ONAN/dry-type power transformers, Form-4b PCC/MCC panels, sandwich busducts, and harmonic APFC banks."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "BESCOM / KPTCL Liaison, CEIG Approvals & Power Sanction",
+                    "description": "Single-window statutory liaison for Single Line Diagram (SLD) drawing sanction, CEIG safety certificates, and BESCOM/ESCOM load energization."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Commercial, Industrial & Residential Turnkey Wiring",
+                    "description": "IS:732 compliant concealed FRLS wiring, apartment/layout electrification, industrial cable trays, and smart home automation in Bengaluru."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Earthing, Lightning Protection, Energy Audits & Preventive AMC",
+                    "description": "IS 3043 chemical earthing electrodes, ESE lightning arresters, Megger/Hi-Pot relay testing, thermal imaging audits, and 24/7 industrial AMC."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Solar Rooftop EPC & BESCOM Net Metering",
+                    "description": "Commercial, industrial, and residential rooftop solar power installation with Tier-1 bifacial PV panels and KERC/BESCOM bidirectional net metering."
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://ananyaelectricalsolutions.com/#website",
+            "url": "https://ananyaelectricalsolutions.com/",
+            "name": "Ananya Electrical Solutions",
+            "alternateName": [
+              "Ananya Electrical Solutions Bengaluru",
+              "Ananya Electrical"
+            ],
+            "inLanguage": "en-IN",
+            "publisher": {
+              "@id": "https://ananyaelectricalsolutions.com/#business"
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://ananyaelectricalsolutions.com/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Why hire a Super Grade Licensed Electrical Contractor in Bengaluru, Karnataka?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A Super Grade License issued by the Government of Karnataka Electrical Inspectorate authorizes the contractor to execute Low Tension (LT), High Tension (11kV/33kV), and Extra High Tension (66kV/110kV+) electrical works, and represent clients directly for CEIG drawing sanctions and BESCOM/KPTCL safety clearances."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where is Ananya Electrical Solutions located and which areas in Karnataka do you serve?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Our headquarters is located at 59, Opp Bank of India, G-Block, Sahakarnagar Main Road, Bengaluru, Karnataka 560092. We serve all major industrial, commercial, and residential zones across Bengaluru (Sahakarnagar, Hebbal, Yelahanka, Peenya, Whitefield, Electronic City, Bommasandra, Devanahalli, Hosakote) and all 31 districts of Karnataka."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does CEIG drawing sanction and BESCOM power approval take?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "With complete Single Line Diagrams (SLD), equipment layout clearances, and NABL-calibrated earth resistance/insulation test reports prepared by our engineering team, CEIG drawing sanction typically takes 10 to 14 working days, followed by final safety inspection and energization approval within 5 to 7 working days."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you provide turnkey rooftop solar installation with BESCOM Net Metering in Bengaluru?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. We provide complete rooftop and ground-mounted solar EPC services for factories, commercial buildings, apartments, and independent homes, including Tier-1 bifacial solar panels, string/hybrid inverters, CEIG solar clearance, and BESCOM bidirectional net metering."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How can I request a site visit or electrical quotation from Ananya Electrical Solutions?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "You can call or WhatsApp our primary engineering desk at +91 9632025123, call our 24/7 grid emergency hotline at +91 8660121438, email ananyaelectricalsolutions@gmail.com, or submit the online engineering quotation form on our website."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "index": 1,
+      "type": "BreadcrumbList",
+      "name": null,
+      "schema": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "@id": "https://ananyaelectricalsolutions.com/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://ananyaelectricalsolutions.com/"
+          }
+        ]
+      }
+    }
+  ],
+  "headings": {
+    "h1_count": 1,
+    "h1_text": [
+      "Powering Karnataka with Reliable Electrical & Solar Solutions"
+    ],
+    "h2_count": 10,
+    "h2_text": [
+      "Class 1 Electrical Contractor in Karnataka",
+      "Explore Our Interactive 3D Engineering Models: Residential Layout, 2BHK Interior, 33kV Substation, Rooftop Solar & Smart Home Automation",
+      "Core Capability Pillars",
+      "Comprehensive Electrical Services & Equipment",
+      "Our Electrical Services & Equipment Solutions",
+      "Precision Infrastructure Built on Trust and Rigor",
+      "How We Power Your Facilities: Turnkey Services & Equipment",
+      "Key Project Domains"
+    ],
+    "h3_count": 34
+  },
+  "navigation": {
+    "header_position": "fixed",
+    "header_buttons": [
+      "ANANYA ELECTRICAL SOLUTIONS",
+      "3d_rotation 3D Model expand_more",
+      "electrical_services Services expand_more",
+      "photo_library Projects Gallery",
+      "domain About Us",
+      "contact_support Contact Us",
+      "format_list_bulleted Enquiry Forms",
+      "request_quote Get a Consultation / Quote Get Quote",
+      "menu"
+    ],
+    "enquiry_hub": {
+      "modal_accessible": true,
+      "forms_count": 15
+    }
+  },
+  "form_analysis": {
+    "form_present": true,
+    "input_count": 7,
+    "inputs": [
+      {
+        "id": "client-name",
+        "name": null,
+        "type": "text",
+        "required": true,
+        "placeholder": "e.g. Precision Components Ltd."
+      },
+      {
+        "id": "client-phone",
+        "name": null,
+        "type": "tel",
+        "required": true,
+        "placeholder": "+91 97434 61955"
+      },
+      {
+        "id": "project-type",
+        "name": null,
+        "type": "select",
+        "required": true,
+        "placeholder": null
+      },
+      {
+        "id": "location",
+        "name": null,
+        "type": "text",
+        "required": true,
+        "placeholder": "e.g. Sahakarnagar / Peenya / Whitefield / Mysuru"
+      },
+      {
+        "id": "client-email",
+        "name": null,
+        "type": "email",
+        "required": false,
+        "placeholder": "projects@yourcompany.com"
+      },
+      {
+        "id": "notes",
+        "name": null,
+        "type": "textarea",
+        "required": false,
+        "placeholder": "Specify load requirements (e.g. 500 kVA), building type, timelines, or solar capacity required..."
+      },
+      {
+        "id": "compliance-check",
+        "name": null,
+        "type": "checkbox",
+        "required": true,
+        "placeholder": null
+      }
+    ]
+  },
+  "integrations": {
+    "whatsapp_href": "https://wa.me/919632025123?text=Hello%20Ananya%20Electrical%20Solutions%2C%20I%20would%20like%20to%20enquire%20about%20electrical%20contracting%20or%20solar%20installation%20in%20Bengaluru.",
+    "tel_hrefs": [
+      "tel:+918660121438",
+      "tel:+919632025123"
+    ],
+    "mailto_hrefs": [
+      "mailto:ananyaelectricalsolutions@gmail.com"
+    ],
+    "maps_href": "https://www.google.com/maps/search/?api=1&query=13.063471473522608,77.59142761283867",
+    "maps_rel": "noopener noreferrer"
+  },
+  "performance": {
+    "ttfb_ms": 448,
+    "tcp_connect_ms": 446,
+    "dom_content_loaded_ms": 4360,
+    "load_event_ms": 4361,
+    "first_contentful_paint_ms": 6648
+  },
+  "responsive": {
+    "mobile_hamburger_visible": true
+  },
+  "security": {
+    "https_enforced": true,
+    "unsafe_blank_targets_count": 0,
+    "unsafe_blank_links": []
+  }
+}

@@ -5,6 +5,6 @@ Feature: Homepage Verification
 
   Scenario: Homepage loading and title verification
     Given I navigate to the Ananya Electrical Solutions homepage
-    Then the page title should contain "Electrical Contractor in Bengaluru"
+    Then the page title should contain "Ananya Electrical Solutions"
     And the brand logo should be visible in the header
 

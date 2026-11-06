@@ -13,8 +13,8 @@ def test_homepage_loads_successfully(page: Page, home_page: HomePage, base_url: 
     assert response.status == 200, f"Expected status 200 but received {response.status}"
     
     title = page.title()
-    assert "Electrical Contractor in Bengaluru" in title, f"Title mismatch: '{title}'"
-    assert "Ananya Electrical Solutions" in title
+    assert "Ananya Electrical Solutions" in title, f"Title mismatch: '{title}'"
+    assert ("Electrical Contractor" in title or "Electrical & Solar Contractor" in title), f"Title description mismatch: '{title}'"
 
 @pytest.mark.functional
 @pytest.mark.regression

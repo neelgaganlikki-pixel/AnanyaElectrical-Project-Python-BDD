@@ -14,8 +14,15 @@ class BasePage:
 
     def navigate_to(self, url: str):
         self.logger.info(f"Navigating to: {url}")
-        response = self.page.goto(url, wait_until="networkidle")
-        return response
+        try:
+            response = self.page.goto(url, wait_until="domcontentloaded", timeout=30000)
+            try:
+                self.page.wait_for_load_state("load", timeout=8000)
+            except Exception:
+                pass
+            return response
+        except Exception:
+            return self.page.goto(url, timeout=30000)
 
     def click_element(self, selector: str, element_key: Optional[str] = None):
         self.logger.info(f"Clicking element: '{selector}' (key: {element_key})")

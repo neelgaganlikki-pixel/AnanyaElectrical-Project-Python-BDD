@@ -1,0 +1,71 @@
+====================================================================================================
+ANANYA ELECTRICAL SOLUTIONS - COMPLETE TEST CASE INVENTORY (ALL 63 SCENARIOS)
+====================================================================================================
+
+Test 01 [TC_FUNC_001]: Homepage - Verify homepage loads successfully with HTTP 200 and expected title.
+Test 02 [TC_FUNC_002]: Header & Brand - Verify brand logo presence and click action resets viewport to top.
+Test 03 [TC_FUNC_003]: Navigation - Verify desktop navigation links scroll to corresponding sections.
+Test 04 [TC_FUNC_004]: Enquiry Forms Hub - Verify clicking 'Enquiry Forms' button opens modal catalog with 15 forms.
+Test 05 [TC_FUNC_005]: Sticky Header - Verify header maintains sticky fixed positioning when scrolling through page.
+Test 06 [TC_POS_001]: Consultation Form - Verify successful quote request submission with valid mandatory fields.
+Test 07 [TC_POS_002]: Consultation Form - Verify optional email and notes fields are accepted and included in submission.
+Test 08 [TC_POS_003]: Quick Actions - Verify Preferred Instant Response Channel toggling between WhatsApp and Email.
+Test 09 [TC_NEG_001]: Consultation Form - Verify form submission is blocked with HTML5 validation when mandatory fields are empty.
+Test 10 [TC_NEG_002]: Consultation Form - Verify submission is rejected with validation alert when invalid phone number is entered.
+Test 11 [TC_NEG_003]: Consultation Form - Verify submission is rejected when invalid email syntax is provided in optional email field.
+Test 12 [TC_NEG_004]: Consultation Form - Verify submission is blocked when compliance checkbox is unchecked.
+Test 13 [TC_BVA_001]: Phone Validation - Verify phone number with 9 digits (Min - 1 boundary) is rejected.
+Test 14 [TC_BVA_002]: Phone Validation - Verify phone number with exactly 10 digits starting with 6/7/8/9 (Valid boundary) is accepted.
+Test 15 [TC_BVA_003]: Phone Validation - Verify phone number with 11 digits without country code (Max + 1 boundary) is rejected.
+Test 16 [TC_BVA_004]: Phone Validation - Verify phone number with valid country code prefix (+91, 91, 0) is accepted.
+Test 17 [TC_EQ_001]: Email Equivalence - Verify valid email partition (user@domain.com, user.name@domain.co.in) is accepted.
+Test 18 [TC_EQ_002]: Email Equivalence - Verify invalid email partition (missing @, missing domain, spaces) is rejected.
+Test 19 [TC_UI_001]: UI Consistency - Verify brand logo dimensions, image loading, and styling in header.
+Test 20 [TC_UI_002]: Footer Structure - Verify footer credentials, license statement, contact information, and copyright notice.
+Test 21 [TC_RESP_001]: Responsive Desktop - Verify layout rendering and navigation visibility at 1920x1080 and 1440x900.
+Test 22 [TC_RESP_002]: Responsive Tablet - Verify layout reflow and touch target spacing at 768x1024 tablet portrait.
+Test 23 [TC_RESP_003]: Responsive Mobile - Verify mobile hamburger button appears and desktop navbar collapses at 375x812.
+Test 24 [TC_INT_001]: WhatsApp Integration - Verify WhatsApp CTA link format, phone number, and prefilled message encoding.
+Test 25 [TC_INT_002]: Telephone Integration - Verify primary and emergency telephone tel: links trigger direct dialer with valid numbers.
+Test 26 [TC_INT_003]: Email Integration - Verify official mailto: link targets ananyaelectricalsolutions@gmail.com.
+Test 27 [TC_INT_004]: Google Maps Integration - Verify Google Maps CTA opens accurate geolocation coordinates in new tab.
+Test 28 [TC_SEC_001]: HTTPS Enforcement - Verify dev and production environments enforce secure HTTPS protocols.
+Test 29 [TC_SEC_002]: External Link Security - Verify external links have rel='noopener noreferrer' to prevent reverse tabnabbing.
+Test 30 [TC_SEC_003]: Input Sanitization / XSS - Verify benign XSS payload input is properly sanitized and not executed.
+Test 31 [TC_PERF_001]: Navigation Timing - Measure and validate Navigation Timing: DOMContentLoaded and Load Event < 3.5s.
+Test 32 [TC_PERF_002]: Resource Diagnostics - Verify no failed network requests (4xx/5xx) and no broken static assets.
+Test 33 [TC_SEO_001]: Metadata & Title - Verify title tag, meta description, keywords, robots, and canonical URL.
+Test 34 [TC_SEO_002]: Open Graph & Twitter Cards - Verify Open Graph og:title, og:image, og:url and Twitter card metadata.
+Test 35 [TC_SEO_003]: Schema.org Structured Data - Verify presence and schema validity of LocalBusiness and BreadcrumbList JSON-LD.
+Test 36 [TC_A11Y_001]: Accessible Form Controls - Verify all form inputs and interactive buttons have accessible names or labels.
+Test 37 [TC_A11Y_002]: Image Alt Attributes - Verify content images have meaningful alt text attributes for screen readers.
+Test 38 [TC_HEAL_001]: Self-Healing Engine - Verify self-healing engine recovers element when primary selector fails but fingerprint matches.
+Test 39 [TC_HEAL_002]: Self-Healing Engine Safety - Verify self-healing engine safely rejects healing when element is genuinely missing or ambiguous.
+Test 40 [TC_FAQ_001]: FAQ Knowledge Base - Verify FAQ Schema contains 5 core statutory and engineering Q&As.
+Test 41 [TC_FAQ_002]: FAQ Statutory Content - Verify statutory answers for CEIG approvals and BESCOM power energization.
+Test 42 [TC_FAQ_003]: FAQ Schema Accessibility - Verify Schema entity references and SEO snippet accessibility for search engines.
+Test 43 [TC_GAL_001]: Projects Gallery - Verify Key Project Domains filter chips functionality (All, Industrial, Commercial, Solar).
+Test 44 [TC_GAL_002]: Projects Gallery Images - Verify project domain images render with valid dimensions and descriptive alt text.
+Test 45 [TC_GAL_003]: Case Studies CTA - Verify 'View All Karnataka Case Studies & Commissioning Approvals' CTA presence.
+Test 46 [TC_COMM_001]: Emergency Hotline - Verify 24/7 Grid Emergency Hotline link targets tel:+918660121438.
+Test 47 [TC_COMM_002]: Primary Consultation Phone - Verify primary business desk phone links target tel:+919632025123.
+Test 48 [TC_COMM_003]: WhatsApp Precomposed Message - Verify WhatsApp click-to-chat URL targets 919632025123 with sanitized precomposed text.
+Test 49 [TC_COMM_004]: Instagram Social Link - Verify official Instagram link targets company profile with rel='noopener noreferrer'.
+Test 50 [TC_FORM_005]: Project Type Options - Verify all 12 commercial and industrial project types exist in #project-type dropdown.
+Test 51 [TC_FORM_006]: Industrial Corridor Locations - Verify #location input accepts major Karnataka industrial corridor addresses.
+Test 52 [TC_FORM_007]: Notes Textarea Multiline - Verify #notes textarea accepts and preserves multi-line technical requirements.
+Test 53 [TC_FORM_008]: Phone Formatting Tolerance - Verify phone input tolerance with formatted strings (10-digit standard and +91 prefix).
+Test 54 [TC_HUB_004]: Substation Modular Form - Verify Substation & HT modular form card exists in Enquiry Forms drawer catalog.
+Test 55 [TC_HUB_005]: Solar EPC Modular Form - Verify Solar Rooftop EPC modular card exists in Enquiry Forms catalog.
+Test 56 [TC_HUB_006]: Preventive Maintenance AMC Form - Verify Preventive Maintenance & AMC modular card exists in Enquiry Forms catalog.
+Test 57 [TC_HUB_007]: Transformer Switchgear Form - Verify Transformer & Switchgear Panel erection modular card exists in catalog.
+Test 58 [TC_HUB_008]: Statutory Liaison CEIG Form - Verify CEIG/BESCOM Statutory Liaison modular card exists in catalog.
+Test 59 [TC_REG_001]: Super Grade Licensing Badging - Verify Karnataka Electrical Inspectorate Super Grade licensing credentials.
+Test 60 [TC_REG_002]: Dynamic Copyright Year - Verify footer copyright string contains current calendar year dynamically.
+Test 61 [TC_REG_003]: Sahakarnagar Office Address Sync - Verify registered Sahakarnagar office address and PIN 560092 across footer and contact.
+Test 62 [TC_EDGE_001]: Rapid Multi-Click Form Debounce - Verify rapid duplicate clicks on submit button generate only one confirmation banner.
+Test 63 [TC_EDGE_002]: Browser History Navigation (bfcache) - Verify browser history back/forward (bfcache) navigation renders layout without JS errors.
+
+====================================================================================================
+TOTAL: 63 Test Cases | 100% Automated | 100% Passed
+====================================================================================================

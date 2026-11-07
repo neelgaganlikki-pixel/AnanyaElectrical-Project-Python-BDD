@@ -80,3 +80,4 @@ def test_phone_input_formatting_tolerance(page: Page, contact_page: ContactPage,
     # +91 prefix format
     phone_input.fill("+919743461955")
     assert phone_input.input_value() == "+919743461955"
+

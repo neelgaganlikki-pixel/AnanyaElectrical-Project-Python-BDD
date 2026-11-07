@@ -66,3 +66,4 @@ def test_instagram_profile_security_link(page: Page, nav_page: NavigationPage, b
     
     assert target == "_blank", "Instagram link should open in a new tab"
     assert rel is not None and "noopener" in rel and "noreferrer" in rel, "Insecure external link: missing rel='noopener noreferrer'"
+

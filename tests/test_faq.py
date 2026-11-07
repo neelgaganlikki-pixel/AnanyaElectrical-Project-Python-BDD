@@ -80,3 +80,4 @@ def test_faq_accessibility_entities(page: Page, nav_page: NavigationPage, base_u
     
     assert any("#faq" in gid for gid in graph_ids), "FAQ anchor ID not linked in Schema graph"
     assert any("#business" in gid for gid in graph_ids), "Business ID not linked in Schema graph"
+

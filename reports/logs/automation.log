@@ -215,3 +215,262 @@
 [2026-11-04 22:36:55] [INFO] [HomePage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
 [2026-11-04 22:36:59] [INFO] [HomePage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
 [2026-11-04 22:38:04] [INFO] [NavigationPage]: Clicking element: 'header button:has-text('Enquiry Forms')' (key: navigation.enquiry_forms_button)
+[2026-11-06 20:02:33] [INFO] [HomePage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-06 20:02:39] [INFO] [HomePage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-06 20:02:43] [INFO] [HomePage]: Clicking element: 'header button:has-text('ANANYA')' (key: None)
+[2026-11-06 20:02:45] [INFO] [NavigationPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-06 20:02:47] [INFO] [NavigationPage]: Clicking element: 'header button:has-text('About Us')' (key: navigation.about_us_link)
+[2026-11-06 20:02:48] [INFO] [NavigationPage]: Clicking element: 'header button:has-text('Contact Us')' (key: navigation.contact_us_link)
+[2026-11-06 20:02:49] [INFO] [NavigationPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-06 20:02:52] [INFO] [NavigationPage]: Clicking element: 'header button:has-text('Enquiry Forms')' (key: navigation.enquiry_forms_button)
+[2026-11-06 20:02:52] [INFO] [NavigationPage]: Clicking element: '[role='dialog'][aria-modal='true'] button:has-text('close')' (key: None)
+[2026-11-06 20:02:53] [INFO] [HomePage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 08:36:52] [INFO] [HomePage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 08:36:55] [INFO] [HomePage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 08:36:59] [INFO] [HomePage]: Clicking element: 'header button:has-text('ANANYA')' (key: None)
+[2026-11-07 08:37:01] [INFO] [NavigationPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 08:37:05] [INFO] [NavigationPage]: Clicking element: 'header button:has-text('About Us')' (key: navigation.about_us_link)
+[2026-11-07 08:37:06] [INFO] [NavigationPage]: Clicking element: 'header button:has-text('Contact Us')' (key: navigation.contact_us_link)
+[2026-11-07 08:37:08] [INFO] [NavigationPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 08:37:11] [INFO] [NavigationPage]: Clicking element: 'header button:has-text('Enquiry Forms')' (key: navigation.enquiry_forms_button)
+[2026-11-07 08:37:11] [INFO] [NavigationPage]: Clicking element: '[role='dialog'][aria-modal='true'] button:has-text('close')' (key: None)
+[2026-11-07 08:37:13] [INFO] [HomePage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 08:37:29] [INFO] [ContactPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 08:37:32] [INFO] [ContactPage]: Clicking element: '#quote-form button[type='submit']' (key: quote_form.submit_button)
+[2026-11-07 08:37:33] [INFO] [ContactPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 08:37:36] [INFO] [ContactPage]: Filling input '#client-name' with: 'Test Client' (key: quote_form.client_name)
+[2026-11-07 08:37:36] [INFO] [ContactPage]: Filling input '#client-phone' with: '12345' (key: quote_form.client_phone)
+[2026-11-07 08:37:37] [INFO] [ContactPage]: Filling input '#location' with: 'Bengaluru' (key: quote_form.location)
+[2026-11-07 08:37:38] [INFO] [ContactPage]: Clicking element: '#quote-form button[type='submit']' (key: quote_form.submit_button)
+[2026-11-07 08:37:39] [INFO] [ContactPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 08:37:42] [INFO] [ContactPage]: Filling input '#client-name' with: 'Test Client' (key: quote_form.client_name)
+[2026-11-07 08:37:42] [INFO] [ContactPage]: Filling input '#client-phone' with: '+91 97434 61955' (key: quote_form.client_phone)
+[2026-11-07 08:37:43] [INFO] [ContactPage]: Filling input '#location' with: 'Bengaluru' (key: quote_form.location)
+[2026-11-07 08:37:43] [INFO] [ContactPage]: Filling input '#client-email' with: 'test@invalid' (key: quote_form.client_email)
+[2026-11-07 08:37:44] [INFO] [ContactPage]: Clicking element: '#quote-form button[type='submit']' (key: quote_form.submit_button)
+[2026-11-07 08:37:45] [INFO] [ContactPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 08:37:48] [INFO] [ContactPage]: Filling input '#client-name' with: 'Test Client' (key: quote_form.client_name)
+[2026-11-07 08:37:48] [INFO] [ContactPage]: Filling input '#client-phone' with: '+91 97434 61955' (key: quote_form.client_phone)
+[2026-11-07 08:37:49] [INFO] [ContactPage]: Filling input '#location' with: 'Bengaluru' (key: quote_form.location)
+[2026-11-07 08:37:50] [INFO] [ContactPage]: Clicking element: '#quote-form button[type='submit']' (key: quote_form.submit_button)
+[2026-11-07 08:37:51] [INFO] [ContactPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 08:37:54] [INFO] [ContactPage]: Filling input '#client-name' with: 'BVA Client' (key: quote_form.client_name)
+[2026-11-07 08:37:54] [INFO] [ContactPage]: Filling input '#client-phone' with: '987654321' (key: quote_form.client_phone)
+[2026-11-07 08:37:55] [INFO] [ContactPage]: Filling input '#location' with: 'Peenya' (key: quote_form.location)
+[2026-11-07 08:37:56] [INFO] [ContactPage]: Clicking element: '#quote-form button[type='submit']' (key: quote_form.submit_button)
+[2026-11-07 08:37:57] [INFO] [ContactPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 08:38:00] [INFO] [ContactPage]: Filling input '#client-name' with: 'BVA Client' (key: quote_form.client_name)
+[2026-11-07 08:38:00] [INFO] [ContactPage]: Filling input '#client-phone' with: '98765432109' (key: quote_form.client_phone)
+[2026-11-07 08:38:01] [INFO] [ContactPage]: Filling input '#location' with: 'Peenya' (key: quote_form.location)
+[2026-11-07 08:38:02] [INFO] [ContactPage]: Clicking element: '#quote-form button[type='submit']' (key: quote_form.submit_button)
+[2026-11-07 08:38:03] [INFO] [ContactPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 08:38:06] [INFO] [ContactPage]: Filling input '#client-name' with: 'Precision Industrial Automation Ltd.' (key: quote_form.client_name)
+[2026-11-07 08:38:06] [INFO] [ContactPage]: Filling input '#client-phone' with: '+91 97434 61955' (key: quote_form.client_phone)
+[2026-11-07 08:38:07] [INFO] [ContactPage]: Filling input '#location' with: 'Peenya Industrial Area Phase 1' (key: quote_form.location)
+[2026-11-07 08:38:07] [INFO] [ContactPage]: Filling input '#client-email' with: 'projects@precision-automation.com' (key: quote_form.client_email)
+[2026-11-07 08:38:08] [INFO] [ContactPage]: Filling input '#notes' with: '500 kVA Transformer and HT Switchgear panel audit.' (key: quote_form.notes)
+[2026-11-07 08:38:08] [INFO] [ContactPage]: Clicking element: '#quote-form button:has-text('WhatsApp')' (key: None)
+[2026-11-07 08:38:09] [INFO] [ContactPage]: Clicking element: '#quote-form button[type='submit']' (key: quote_form.submit_button)
+[2026-11-07 08:38:11] [INFO] [ContactPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 08:38:21] [INFO] [HomePage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 08:38:25] [INFO] [HomePage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 08:38:28] [INFO] [HomePage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 08:38:31] [INFO] [HomePage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 08:39:19] [INFO] [NavigationPage]: Clicking element: 'header button:has-text('Enquiry Forms')' (key: navigation.enquiry_forms_button)
+[2026-11-07 10:22:46] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:23:28] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:23:31] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:23:56] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:23:58] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:24:00] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:24:16] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:24:17] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:24:19] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:24:20] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:24:25] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:24:41] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:24:47] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:24:48] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:24:50] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:24:52] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:24:54] [INFO] [ContactPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:24:57] [INFO] [ContactPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:24:59] [INFO] [ContactPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:25:02] [INFO] [ContactPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:25:05] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:25:05] [INFO] [NavigationPage]: Clicking element: 'header button:has-text('Enquiry Forms')' (key: navigation.enquiry_forms_button)
+[2026-11-07 10:25:07] [INFO] [NavigationPage]: Clicking element: '[role='dialog'][aria-modal='true'] button:has-text('close')' (key: None)
+[2026-11-07 10:25:08] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:25:09] [INFO] [NavigationPage]: Clicking element: 'header button:has-text('Enquiry Forms')' (key: navigation.enquiry_forms_button)
+[2026-11-07 10:25:11] [INFO] [NavigationPage]: Clicking element: '[role='dialog'][aria-modal='true'] button:has-text('close')' (key: None)
+[2026-11-07 10:25:12] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:25:12] [INFO] [NavigationPage]: Clicking element: 'header button:has-text('Enquiry Forms')' (key: navigation.enquiry_forms_button)
+[2026-11-07 10:25:14] [INFO] [NavigationPage]: Clicking element: '[role='dialog'][aria-modal='true'] button:has-text('close')' (key: None)
+[2026-11-07 10:25:15] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:25:15] [INFO] [NavigationPage]: Clicking element: 'header button:has-text('Enquiry Forms')' (key: navigation.enquiry_forms_button)
+[2026-11-07 10:25:29] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:25:30] [INFO] [NavigationPage]: Clicking element: 'header button:has-text('Enquiry Forms')' (key: navigation.enquiry_forms_button)
+[2026-11-07 10:25:32] [INFO] [NavigationPage]: Clicking element: '[role='dialog'][aria-modal='true'] button:has-text('close')' (key: None)
+[2026-11-07 10:25:33] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:25:35] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:25:36] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:25:38] [INFO] [ContactPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:25:53] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:25:54] [INFO] [NavigationPage]: Clicking element: 'header button:has-text('Contact Us')' (key: navigation.contact_us_link)
+[2026-11-07 10:26:45] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:26:49] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:26:50] [INFO] [NavigationPage]: Clicking element: 'header button:has-text('Enquiry Forms')' (key: navigation.enquiry_forms_button)
+[2026-11-07 10:26:52] [INFO] [NavigationPage]: Clicking element: '[role='dialog'][aria-modal='true'] button:has-text('close')' (key: None)
+[2026-11-07 10:26:53] [INFO] [ContactPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:26:56] [INFO] [ContactPage]: Filling input '#client-name' with: 'Debounce Test Ltd' (key: quote_form.client_name)
+[2026-11-07 10:26:56] [INFO] [ContactPage]: Filling input '#client-phone' with: '9743461955' (key: quote_form.client_phone)
+[2026-11-07 10:31:09] [INFO] [ContactPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:31:13] [INFO] [ContactPage]: Filling input '#client-name' with: 'Debounce Test Ltd' (key: quote_form.client_name)
+[2026-11-07 10:31:13] [INFO] [ContactPage]: Filling input '#client-phone' with: '9743461955' (key: quote_form.client_phone)
+[2026-11-07 10:31:13] [INFO] [ContactPage]: Filling input '#location' with: 'Peenya Bengaluru' (key: quote_form.location)
+[2026-11-07 10:31:13] [INFO] [ContactPage]: Filling input '#client-email' with: 'debounce@test.in' (key: quote_form.client_email)
+[2026-11-07 10:31:13] [INFO] [ContactPage]: Filling input '#notes' with: 'Automated debounce test' (key: quote_form.notes)
+[2026-11-07 10:32:17] [INFO] [ContactPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:32:20] [INFO] [ContactPage]: Filling input '#client-name' with: 'Debounce Test Ltd' (key: quote_form.client_name)
+[2026-11-07 10:32:20] [INFO] [ContactPage]: Filling input '#client-phone' with: '9743461955' (key: quote_form.client_phone)
+[2026-11-07 10:32:20] [INFO] [ContactPage]: Filling input '#location' with: 'Peenya Bengaluru' (key: quote_form.location)
+[2026-11-07 10:32:20] [INFO] [ContactPage]: Filling input '#client-email' with: 'debounce@test.in' (key: quote_form.client_email)
+[2026-11-07 10:32:20] [INFO] [ContactPage]: Filling input '#notes' with: 'Automated debounce test' (key: quote_form.notes)
+[2026-11-07 10:32:34] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:32:36] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:32:38] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:32:39] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:32:43] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:32:47] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:32:55] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:32:58] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:33:00] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:33:02] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:33:04] [INFO] [ContactPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:33:09] [INFO] [ContactPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:33:12] [INFO] [ContactPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:33:15] [INFO] [ContactPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:33:19] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:33:19] [INFO] [NavigationPage]: Clicking element: 'header button:has-text('Enquiry Forms')' (key: navigation.enquiry_forms_button)
+[2026-11-07 10:33:22] [INFO] [NavigationPage]: Clicking element: '[role='dialog'][aria-modal='true'] button:has-text('close')' (key: None)
+[2026-11-07 10:33:23] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:33:23] [INFO] [NavigationPage]: Clicking element: 'header button:has-text('Enquiry Forms')' (key: navigation.enquiry_forms_button)
+[2026-11-07 10:33:26] [INFO] [NavigationPage]: Clicking element: '[role='dialog'][aria-modal='true'] button:has-text('close')' (key: None)
+[2026-11-07 10:33:27] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:33:28] [INFO] [NavigationPage]: Clicking element: 'header button:has-text('Enquiry Forms')' (key: navigation.enquiry_forms_button)
+[2026-11-07 10:33:31] [INFO] [NavigationPage]: Clicking element: '[role='dialog'][aria-modal='true'] button:has-text('close')' (key: None)
+[2026-11-07 10:33:32] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:33:32] [INFO] [NavigationPage]: Clicking element: 'header button:has-text('Enquiry Forms')' (key: navigation.enquiry_forms_button)
+[2026-11-07 10:33:35] [INFO] [NavigationPage]: Clicking element: '[role='dialog'][aria-modal='true'] button:has-text('close')' (key: None)
+[2026-11-07 10:33:35] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:33:36] [INFO] [NavigationPage]: Clicking element: 'header button:has-text('Enquiry Forms')' (key: navigation.enquiry_forms_button)
+[2026-11-07 10:33:38] [INFO] [NavigationPage]: Clicking element: '[role='dialog'][aria-modal='true'] button:has-text('close')' (key: None)
+[2026-11-07 10:33:39] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:33:41] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:33:42] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:33:45] [INFO] [ContactPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:33:48] [INFO] [ContactPage]: Filling input '#client-name' with: 'Debounce Test Ltd' (key: quote_form.client_name)
+[2026-11-07 10:33:48] [INFO] [ContactPage]: Filling input '#client-phone' with: '9743461955' (key: quote_form.client_phone)
+[2026-11-07 10:33:48] [INFO] [ContactPage]: Filling input '#location' with: 'Peenya Bengaluru' (key: quote_form.location)
+[2026-11-07 10:33:48] [INFO] [ContactPage]: Filling input '#client-email' with: 'debounce@test.in' (key: quote_form.client_email)
+[2026-11-07 10:33:48] [INFO] [ContactPage]: Filling input '#notes' with: 'Automated debounce test' (key: quote_form.notes)
+[2026-11-07 10:33:51] [INFO] [NavigationPage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:33:51] [INFO] [NavigationPage]: Clicking element: 'header button:has-text('Contact Us')' (key: navigation.contact_us_link)
+[2026-11-07 10:38:28] [INFO] [NavigationPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:38:30] [INFO] [NavigationPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:38:33] [INFO] [NavigationPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:38:35] [INFO] [NavigationPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:38:37] [INFO] [NavigationPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:38:39] [INFO] [NavigationPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:38:42] [INFO] [NavigationPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:38:44] [INFO] [ContactPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:38:46] [INFO] [ContactPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:38:49] [INFO] [ContactPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:38:51] [INFO] [ContactPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:38:53] [INFO] [HomePage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:38:55] [INFO] [HomePage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:38:57] [INFO] [HomePage]: Clicking element: 'header button:has-text('ANANYA')' (key: None)
+[2026-11-07 10:38:59] [INFO] [NavigationPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:39:00] [INFO] [NavigationPage]: Clicking element: 'header button:has-text('About Us')' (key: navigation.about_us_link)
+[2026-11-07 10:39:02] [INFO] [NavigationPage]: Clicking element: 'header button:has-text('Contact Us')' (key: navigation.contact_us_link)
+[2026-11-07 10:39:03] [INFO] [NavigationPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:39:04] [INFO] [NavigationPage]: Clicking element: 'header button:has-text('Enquiry Forms')' (key: navigation.enquiry_forms_button)
+[2026-11-07 10:39:05] [INFO] [NavigationPage]: Clicking element: '[role='dialog'][aria-modal='true'] button:has-text('close')' (key: None)
+[2026-11-07 10:39:06] [INFO] [HomePage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:39:09] [INFO] [NavigationPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:39:12] [INFO] [NavigationPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:39:15] [INFO] [NavigationPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:39:17] [INFO] [NavigationPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:39:18] [INFO] [NavigationPage]: Clicking element: 'header button:has-text('Enquiry Forms')' (key: navigation.enquiry_forms_button)
+[2026-11-07 10:39:19] [INFO] [NavigationPage]: Clicking element: '[role='dialog'][aria-modal='true'] button:has-text('close')' (key: None)
+[2026-11-07 10:39:20] [INFO] [NavigationPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:39:20] [INFO] [NavigationPage]: Clicking element: 'header button:has-text('Enquiry Forms')' (key: navigation.enquiry_forms_button)
+[2026-11-07 10:39:22] [INFO] [NavigationPage]: Clicking element: '[role='dialog'][aria-modal='true'] button:has-text('close')' (key: None)
+[2026-11-07 10:39:22] [INFO] [NavigationPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:39:23] [INFO] [NavigationPage]: Clicking element: 'header button:has-text('Enquiry Forms')' (key: navigation.enquiry_forms_button)
+[2026-11-07 10:39:24] [INFO] [NavigationPage]: Clicking element: '[role='dialog'][aria-modal='true'] button:has-text('close')' (key: None)
+[2026-11-07 10:39:25] [INFO] [NavigationPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:39:25] [INFO] [NavigationPage]: Clicking element: 'header button:has-text('Enquiry Forms')' (key: navigation.enquiry_forms_button)
+[2026-11-07 10:39:26] [INFO] [NavigationPage]: Clicking element: '[role='dialog'][aria-modal='true'] button:has-text('close')' (key: None)
+[2026-11-07 10:39:27] [INFO] [NavigationPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:39:27] [INFO] [NavigationPage]: Clicking element: 'header button:has-text('Enquiry Forms')' (key: navigation.enquiry_forms_button)
+[2026-11-07 10:39:29] [INFO] [NavigationPage]: Clicking element: '[role='dialog'][aria-modal='true'] button:has-text('close')' (key: None)
+[2026-11-07 10:39:42] [INFO] [ContactPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:39:44] [INFO] [ContactPage]: Clicking element: '#quote-form button[type='submit']' (key: quote_form.submit_button)
+[2026-11-07 10:39:45] [INFO] [ContactPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:39:46] [INFO] [ContactPage]: Filling input '#client-name' with: 'Test Client' (key: quote_form.client_name)
+[2026-11-07 10:39:46] [INFO] [ContactPage]: Filling input '#client-phone' with: '12345' (key: quote_form.client_phone)
+[2026-11-07 10:39:46] [INFO] [ContactPage]: Filling input '#location' with: 'Bengaluru' (key: quote_form.location)
+[2026-11-07 10:39:47] [INFO] [ContactPage]: Clicking element: '#quote-form button[type='submit']' (key: quote_form.submit_button)
+[2026-11-07 10:39:48] [INFO] [ContactPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:39:50] [INFO] [ContactPage]: Filling input '#client-name' with: 'Test Client' (key: quote_form.client_name)
+[2026-11-07 10:39:50] [INFO] [ContactPage]: Filling input '#client-phone' with: '+91 97434 61955' (key: quote_form.client_phone)
+[2026-11-07 10:39:50] [INFO] [ContactPage]: Filling input '#location' with: 'Bengaluru' (key: quote_form.location)
+[2026-11-07 10:39:50] [INFO] [ContactPage]: Filling input '#client-email' with: 'test@invalid' (key: quote_form.client_email)
+[2026-11-07 10:39:50] [INFO] [ContactPage]: Clicking element: '#quote-form button[type='submit']' (key: quote_form.submit_button)
+[2026-11-07 10:39:51] [INFO] [ContactPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:39:53] [INFO] [ContactPage]: Filling input '#client-name' with: 'Test Client' (key: quote_form.client_name)
+[2026-11-07 10:39:53] [INFO] [ContactPage]: Filling input '#client-phone' with: '+91 97434 61955' (key: quote_form.client_phone)
+[2026-11-07 10:39:53] [INFO] [ContactPage]: Filling input '#location' with: 'Bengaluru' (key: quote_form.location)
+[2026-11-07 10:39:53] [INFO] [ContactPage]: Clicking element: '#quote-form button[type='submit']' (key: quote_form.submit_button)
+[2026-11-07 10:39:54] [INFO] [ContactPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:39:56] [INFO] [ContactPage]: Filling input '#client-name' with: 'BVA Client' (key: quote_form.client_name)
+[2026-11-07 10:39:56] [INFO] [ContactPage]: Filling input '#client-phone' with: '987654321' (key: quote_form.client_phone)
+[2026-11-07 10:39:56] [INFO] [ContactPage]: Filling input '#location' with: 'Peenya' (key: quote_form.location)
+[2026-11-07 10:39:56] [INFO] [ContactPage]: Clicking element: '#quote-form button[type='submit']' (key: quote_form.submit_button)
+[2026-11-07 10:39:57] [INFO] [ContactPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:40:00] [INFO] [ContactPage]: Filling input '#client-name' with: 'BVA Client' (key: quote_form.client_name)
+[2026-11-07 10:40:00] [INFO] [ContactPage]: Filling input '#client-phone' with: '98765432109' (key: quote_form.client_phone)
+[2026-11-07 10:40:00] [INFO] [ContactPage]: Filling input '#location' with: 'Peenya' (key: quote_form.location)
+[2026-11-07 10:40:00] [INFO] [ContactPage]: Clicking element: '#quote-form button[type='submit']' (key: quote_form.submit_button)
+[2026-11-07 10:40:01] [INFO] [ContactPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:40:03] [INFO] [ContactPage]: Filling input '#client-name' with: 'Precision Industrial Automation Ltd.' (key: quote_form.client_name)
+[2026-11-07 10:40:03] [INFO] [ContactPage]: Filling input '#client-phone' with: '+91 97434 61955' (key: quote_form.client_phone)
+[2026-11-07 10:40:03] [INFO] [ContactPage]: Filling input '#location' with: 'Peenya Industrial Area Phase 1' (key: quote_form.location)
+[2026-11-07 10:40:03] [INFO] [ContactPage]: Filling input '#client-email' with: 'projects@precision-automation.com' (key: quote_form.client_email)
+[2026-11-07 10:40:03] [INFO] [ContactPage]: Filling input '#notes' with: '500 kVA Transformer and HT Switchgear panel audit.' (key: quote_form.notes)
+[2026-11-07 10:40:03] [INFO] [ContactPage]: Clicking element: '#quote-form button:has-text('WhatsApp')' (key: None)
+[2026-11-07 10:40:04] [INFO] [ContactPage]: Clicking element: '#quote-form button[type='submit']' (key: quote_form.submit_button)
+[2026-11-07 10:40:05] [INFO] [ContactPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:40:14] [INFO] [HomePage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:40:16] [INFO] [HomePage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:40:18] [INFO] [HomePage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:40:21] [INFO] [HomePage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:40:56] [INFO] [NavigationPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:40:59] [INFO] [NavigationPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:41:01] [INFO] [NavigationPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:41:03] [INFO] [ContactPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:41:05] [INFO] [ContactPage]: Filling input '#client-name' with: 'Debounce Test Ltd' (key: quote_form.client_name)
+[2026-11-07 10:41:05] [INFO] [ContactPage]: Filling input '#client-phone' with: '9743461955' (key: quote_form.client_phone)
+[2026-11-07 10:41:05] [INFO] [ContactPage]: Filling input '#location' with: 'Peenya Bengaluru' (key: quote_form.location)
+[2026-11-07 10:41:05] [INFO] [ContactPage]: Filling input '#client-email' with: 'debounce@test.in' (key: quote_form.client_email)
+[2026-11-07 10:41:05] [INFO] [ContactPage]: Filling input '#notes' with: 'Automated debounce test' (key: quote_form.notes)
+[2026-11-07 10:41:07] [INFO] [NavigationPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:41:08] [INFO] [NavigationPage]: Clicking element: 'header button:has-text('Contact Us')' (key: navigation.contact_us_link)
+[2026-11-07 10:41:25] [INFO] [NavigationPage]: Clicking element: 'header button:has-text('Enquiry Forms')' (key: navigation.enquiry_forms_button)
+[2026-11-07 10:44:16] [INFO] [HomePage]: Navigating to: https://ananyaelectricalsolutions.com
+[2026-11-07 10:46:10] [INFO] [HomePage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:46:21] [INFO] [HomePage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:46:38] [INFO] [NavigationPage]: Navigating to: https://ananya-electrical-solutions.neelgaganat97.workers.dev
+[2026-11-07 10:46:39] [INFO] [NavigationPage]: Clicking element: 'header button:has-text('Enquiry Forms')' (key: navigation.enquiry_forms_button)
+[2026-11-07 10:46:40] [INFO] [NavigationPage]: Clicking element: '[role='dialog'][aria-modal='true'] button:has-text('close')' (key: None)

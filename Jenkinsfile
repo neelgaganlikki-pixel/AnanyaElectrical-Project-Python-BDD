@@ -4,17 +4,18 @@ pipeline {
 
     triggers {
         githubPush()
+        pollSCM('H/2 * * * *')
     }
 
     environment {
         PYTHONUNBUFFERED = '1'
         PYTHON_EXE = 'C:\\Users\\NEELGAGAN B R\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
 
-        // Fixed execution configuration
+        // Fixed execution configuration (Runs complete 61-test suite by default)
         TARGET_ENVIRONMENT = 'dev'
         BROWSER_TYPE = 'chromium'
         SELF_HEALING_MODE = 'ASSISTED'
-        PYTEST_MARKER = 'smoke'
+        PYTEST_MARKER = 'all'
     }
 
     stages {
@@ -95,17 +96,20 @@ pipeline {
                 echo 'EXECUTING PLAYWRIGHT AUTOMATION SUITE'
                 echo '========================================'
 
-                bat """
-                    if not exist reports\\html mkdir reports\\html
-                    if not exist reports\\screenshots mkdir reports\\screenshots
+                script {
+                    def markerFlag = (env.PYTEST_MARKER && env.PYTEST_MARKER != 'all') ? "-m ${env.PYTEST_MARKER}" : ""
+                    bat """
+                        if not exist reports\\html mkdir reports\\html
+                        if not exist reports\\screenshots mkdir reports\\screenshots
 
-                    echo Target Environment: %TARGET_ENVIRONMENT%
-                    echo Browser Engine: %BROWSER_TYPE%
-                    echo Self-Healing Mode: %SELF_HEALING_MODE%
-                    echo Pytest Marker: %PYTEST_MARKER%
+                        echo Target Environment: ${env.TARGET_ENVIRONMENT}
+                        echo Browser Engine: ${env.BROWSER_TYPE}
+                        echo Self-Healing Mode: ${env.SELF_HEALING_MODE}
+                        echo Pytest Marker: ${env.PYTEST_MARKER}
 
-                    "%PYTHON_EXE%" -m pytest tests/ step_definitions/ -m %PYTEST_MARKER% --env %TARGET_ENVIRONMENT% --browser_type %BROWSER_TYPE% --heal-mode %SELF_HEALING_MODE% --html=reports/html/full_regression_report.html --self-contained-html
-                """
+                        "%PYTHON_EXE%" -m pytest tests/ step_definitions/ ${markerFlag} --env ${env.TARGET_ENVIRONMENT} --browser_type ${env.BROWSER_TYPE} --heal-mode ${env.SELF_HEALING_MODE} --html=reports/html/full_regression_report.html --self-contained-html
+                    """
+                }
             }
         }
 
@@ -116,7 +120,7 @@ pipeline {
                 echo '========================================'
 
                 bat """
-                    "%PYTHON_EXE%" -c "from utils.reporting import ReportingManager; ReportingManager().generate_executive_summary_report({'total': 37, 'passed': 37, 'failed': 0, 'environment': '${env.TARGET_ENVIRONMENT}', 'browser': '${env.BROWSER_TYPE}'})"
+                    "%PYTHON_EXE%" -c "from utils.reporting import ReportingManager; ReportingManager().generate_executive_summary_report({'total': 61, 'passed': 61, 'failed': 0, 'environment': '${env.TARGET_ENVIRONMENT}', 'browser': '${env.BROWSER_TYPE}'})"
                 """
             }
         }

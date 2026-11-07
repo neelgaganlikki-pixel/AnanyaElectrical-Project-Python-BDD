@@ -8,6 +8,7 @@ pipeline {
     }
 
     environment {
+        CI = 'true'
         PYTHONUNBUFFERED = '1'
         PYTHON_EXE = 'C:\\Users\\NEELGAGAN B R\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
 
@@ -107,7 +108,7 @@ pipeline {
                         echo Self-Healing Mode: ${env.SELF_HEALING_MODE}
                         echo Pytest Marker: ${env.PYTEST_MARKER}
 
-                        "%PYTHON_EXE%" -m pytest tests/ step_definitions/ ${markerFlag} --env ${env.TARGET_ENVIRONMENT} --browser_type ${env.BROWSER_TYPE} --heal-mode ${env.SELF_HEALING_MODE} --html=reports/html/full_regression_report.html --self-contained-html
+                        "%PYTHON_EXE%" -m pytest tests/ step_definitions/ ${markerFlag} --env ${env.TARGET_ENVIRONMENT} --browser_type ${env.BROWSER_TYPE} --heal-mode ${env.SELF_HEALING_MODE} --viewport 1920x1080 --html=reports/html/full_regression_report.html --self-contained-html
                     """
                 }
             }

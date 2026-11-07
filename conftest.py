@@ -55,13 +55,19 @@ def pytest_addoption(parser):
     )
 
 def get_laptop_viewport():
-    """Detects the exact logical display dimensions of the user's laptop (accounting for Windows display scaling)."""
+    """Detects the exact logical display dimensions of the user's laptop (accounting for Windows display scaling).
+    In CI/Jenkins headless environment, defaults to Full HD 1920x1080 to keep desktop navigation visible.
+    """
+    if "JENKINS_URL" in os.environ or "BUILD_ID" in os.environ or os.getenv("CI") == "true":
+        return {"width": 1920, "height": 1080}
     try:
         import ctypes
         user32 = ctypes.windll.user32
         w = user32.GetSystemMetrics(0)
         h = user32.GetSystemMetrics(1)
-        if w > 0 and h > 0:
+        # Windows services without an active desktop session return 1024x768 or 0.
+        # Ensure w >= 1280 to guarantee desktop viewport rather than mobile collapse.
+        if w >= 1280 and h >= 720:
             return {"width": w, "height": h}
     except Exception:
         pass
@@ -132,8 +138,22 @@ def browser_instance(request, playwright_instance, browser_type_name):
 def browser_context(request, browser_instance):
     is_headed = bool(request.config.getoption("headed", False))
     viewport_opt = request.config.getoption("viewport", "auto")
+    is_ci = "JENKINS_URL" in os.environ or "BUILD_ID" in os.environ or os.getenv("CI") == "true"
 
-    if viewport_opt == "auto":
+    if is_ci:
+        # In CI/Jenkins headless environment, guarantee Full HD desktop resolution
+        viewport_dim = {"width": 1920, "height": 1080}
+        if viewport_opt and viewport_opt != "auto":
+            try:
+                w, h = map(int, viewport_opt.lower().split("x"))
+                viewport_dim = {"width": w, "height": h}
+            except Exception:
+                pass
+        context = browser_instance.new_context(
+            viewport=viewport_dim,
+            ignore_https_errors=True
+        )
+    elif viewport_opt == "auto":
         laptop_dim = get_laptop_viewport()
         if is_headed:
             # no_viewport=True allows Chromium to natively fill the maximized laptop screen without scaling distortion
@@ -142,7 +162,7 @@ def browser_context(request, browser_instance):
                 ignore_https_errors=True
             )
         else:
-            # Uses the exact logical resolution of the user's laptop (e.g. 1536x864)
+            # Uses the exact logical resolution of the user's laptop (1536x864)
             context = browser_instance.new_context(
                 viewport=laptop_dim,
                 ignore_https_errors=True

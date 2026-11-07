@@ -46,6 +46,26 @@ def pytest_addoption(parser):
         default=0,
         help="Slow down Playwright operations by milliseconds (e.g., --slowmo 500)"
     )
+    parser.addoption(
+        "--viewport",
+        dest="viewport",
+        action="store",
+        default="auto",
+        help="Viewport resolution: 'auto' (detects laptop screen), or 'widthxheight' (e.g. 1536x864, 1366x768)"
+    )
+
+def get_laptop_viewport():
+    """Detects the exact logical display dimensions of the user's laptop (accounting for Windows display scaling)."""
+    try:
+        import ctypes
+        user32 = ctypes.windll.user32
+        w = user32.GetSystemMetrics(0)
+        h = user32.GetSystemMetrics(1)
+        if w > 0 and h > 0:
+            return {"width": w, "height": h}
+    except Exception:
+        pass
+    return {"width": 1536, "height": 864}
 
 @pytest.fixture(scope="session")
 def env_manager(request) -> EnvironmentManager:
@@ -93,8 +113,13 @@ def browser_instance(request, playwright_instance, browser_type_name):
         "headless": not is_headed,
         "slow_mo": slow_mo_ms
     }
+    
+    args = ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"]
+    if is_headed:
+        args.append("--start-maximized")
+        
     if browser_type_name == "chromium":
-        launch_args["args"] = ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"]
+        launch_args["args"] = args
 
     browser = b_type.launch(**launch_args)
     yield browser
@@ -104,11 +129,37 @@ def browser_instance(request, playwright_instance, browser_type_name):
         pass
 
 @pytest.fixture(scope="function")
-def browser_context(browser_instance):
-    context = browser_instance.new_context(
-        viewport={"width": 1920, "height": 1080},
-        ignore_https_errors=True
-    )
+def browser_context(request, browser_instance):
+    is_headed = bool(request.config.getoption("headed", False))
+    viewport_opt = request.config.getoption("viewport", "auto")
+
+    if viewport_opt == "auto":
+        laptop_dim = get_laptop_viewport()
+        if is_headed:
+            # no_viewport=True allows Chromium to natively fill the maximized laptop screen without scaling distortion
+            context = browser_instance.new_context(
+                no_viewport=True,
+                ignore_https_errors=True
+            )
+        else:
+            # Uses the exact logical resolution of the user's laptop (e.g. 1536x864)
+            context = browser_instance.new_context(
+                viewport=laptop_dim,
+                ignore_https_errors=True
+            )
+    else:
+        try:
+            w, h = map(int, viewport_opt.lower().split("x"))
+            context = browser_instance.new_context(
+                viewport={"width": w, "height": h},
+                ignore_https_errors=True
+            )
+        except Exception:
+            context = browser_instance.new_context(
+                viewport=get_laptop_viewport(),
+                ignore_https_errors=True
+            )
+
     yield context
     try:
         context.close()

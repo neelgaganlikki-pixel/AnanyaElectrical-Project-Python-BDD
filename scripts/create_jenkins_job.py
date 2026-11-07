@@ -46,6 +46,10 @@ job_xml = f"""<?xml version="1.1" encoding="UTF-8"?>
         <com.cloudbees.jenkins.GitHubPushTrigger plugin="github">
           <spec></spec>
         </com.cloudbees.jenkins.GitHubPushTrigger>
+        <hudson.triggers.SCMTrigger>
+          <spec>H/2 * * * *</spec>
+          <ignorePostCommitHooks>false</ignorePostCommitHooks>
+        </hudson.triggers.SCMTrigger>
       </triggers>
     </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
   </properties>
